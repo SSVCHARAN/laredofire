@@ -1,5 +1,6 @@
 /**
- * Laredo Firefighters Retirement System - Mobile Menu & Drawer Script
+ * Laredo Firefighters Retirement System - Mobile Navigation Drawer Handler
+ * Ensures 100% reliable opening/closing on mobile touch and desktop click.
  */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -16,41 +17,50 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.appendChild(mobileBackdrop);
     }
 
-    function openMenu(e) {
-        if (e) {
-            e.preventDefault();
-            e.stopPropagation();
+    function toggleMenu(show) {
+        if (!mobileDrawer) return;
+        const isOpen = show !== undefined ? show : !mobileDrawer.classList.contains('open');
+        
+        if (isOpen) {
+            mobileDrawer.classList.add('open');
+            mobileBackdrop.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        } else {
+            mobileDrawer.classList.remove('open');
+            mobileBackdrop.classList.remove('open');
+            document.body.style.overflow = '';
         }
-        if (mobileDrawer) mobileDrawer.classList.add('open');
-        if (mobileBackdrop) mobileBackdrop.classList.add('open');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeMenu(e) {
-        if (e) {
-            e.preventDefault();
-            e.stopPropagation();
-        }
-        if (mobileDrawer) mobileDrawer.classList.remove('open');
-        if (mobileBackdrop) mobileBackdrop.classList.remove('open');
-        document.body.style.overflow = '';
     }
 
     if (mobileToggle) {
-        mobileToggle.addEventListener('click', openMenu);
-        mobileToggle.addEventListener('touchstart', openMenu, { passive: false });
+        mobileToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleMenu(true);
+        });
     }
 
     if (mobileClose) {
-        mobileClose.addEventListener('click', closeMenu);
-        mobileClose.addEventListener('touchstart', closeMenu, { passive: false });
+        mobileClose.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleMenu(false);
+        });
     }
 
     if (mobileBackdrop) {
-        mobileBackdrop.addEventListener('click', closeMenu);
+        mobileBackdrop.addEventListener('click', function() {
+            toggleMenu(false);
+        });
     }
 
+    // Close menu when clicking any link in mobile drawer
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', function() {
+            toggleMenu(false);
+        });
+    });
+
+    // Close on Escape key
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') closeMenu();
+        if (e.key === 'Escape') toggleMenu(false);
     });
 });
