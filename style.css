@@ -119,7 +119,7 @@ main { flex-grow: 1; }
 .mobile-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.4);
+  background: rgba(15, 23, 42, 0.6);
   backdrop-filter: blur(4px);
   opacity: 0;
   visibility: hidden;
@@ -130,29 +130,82 @@ main { flex-grow: 1; }
   opacity: 1;
   visibility: visible;
 }
+
 .mobile-drawer {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
-  width: 320px;
-  max-width: 85vw;
+  width: 300px;
+  max-width: 80vw;
+  height: 100vh;
   z-index: 2000;
   background: #FFFFFF;
   padding: 24px;
-  box-shadow: -8px 0 30px rgba(15, 23, 42, 0.15);
+  box-shadow: -8px 0 30px rgba(15, 23, 42, 0.2);
   transform: translateX(100%);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 .mobile-drawer.open {
   transform: translateX(0);
 }
-.mobile-drawer-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
-.mobile-close { background: none; border: none; font-size: 1.8rem; cursor: pointer; }
-.mobile-nav-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
-.mobile-nav-link { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--dark); text-decoration: none; }
+
+.mobile-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.mobile-close {
+  background: #F1F5F9;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.4rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--dark);
+  transition: background 0.2s;
+}
+.mobile-close:hover {
+  background: #E2E8F0;
+}
+
+.mobile-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-nav-link {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--dark);
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+  display: block;
+}
+
+.mobile-nav-link:hover, .mobile-nav-link.active {
+  background: rgba(158, 27, 27, 0.08);
+  color: var(--primary);
+}
 
 /* --------------------------------------------------------------------------
    PAGE HEADER
