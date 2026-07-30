@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PensionEZ Portal Login | Laredo Firefighters Retirement System</title>
+    <meta name="description" content="Secure login portal for active and retired firefighters and administration staff of the Laredo Firefighters Retirement System.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: var(--dark);
+            background-image: radial-gradient(circle at 50% 20%, rgba(158, 27, 27, 0.25) 0%, rgba(15, 23, 42, 0.95) 70%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .login-page-container {
+            max-width: 480px;
+            margin: 60px auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+        .login-card {
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 36px 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            color: #FFFFFF;
+        }
+        .login-card-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .login-logo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px auto;
+            color: #FFFFFF;
+            box-shadow: 0 8px 20px rgba(158, 27, 27, 0.4);
+        }
+        .login-card-header h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            color: #FFFFFF;
+            margin-bottom: 6px;
+        }
+        .login-card-header p {
+            color: #94A3B8;
+            font-size: 0.9rem;
+        }
+        .login-nav-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #94A3B8;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            transition: color 0.2s;
+        }
+        .login-nav-back:hover {
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <div class="login-page-container">
+        <a href="index.html" class="login-nav-back">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back to Laredo Firefighters Retirement System
+        </a>
+
+        <div class="login-card">
+            <div class="login-card-header">
+                <div class="login-logo">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <h2>PensionEZ Member Portal</h2>
+                <p>Access benefit statements, annuity calculations, and account records.</p>
+            </div>
+
+            <!-- Tab Switcher -->
+            <div class="modal-tabs">
+                <button class="modal-tab active" id="pageTabMember" onclick="switchPageLoginTab('member')">Member Login</button>
+                <button class="modal-tab" id="pageTabStaff" onclick="switchPageLoginTab('staff')">Staff Login</button>
+            </div>
+
+            <form id="pageLoginForm" action="https://www.laredofire.com/SSLFolder/login.aspx?Mem=True" method="GET" class="login-form">
+                <div class="form-group">
+                    <label for="pageUsername" style="color: #E2E8F0;">Username / ID</label>
+                    <input type="text" id="pageUsername" name="username" placeholder="Enter username" required style="background: rgba(15, 23, 42, 0.7); border-color: rgba(255, 255, 255, 0.15); color: #FFF;">
+                </div>
+                <div class="form-group">
+                    <label for="pagePassword" style="color: #E2E8F0;">Password</label>
+                    <input type="password" id="pagePassword" name="password" placeholder="Enter password" required style="background: rgba(15, 23, 42, 0.7); border-color: rgba(255, 255, 255, 0.15); color: #FFF;">
+                </div>
+                <div class="form-options" style="margin-bottom: 20px;">
+                    <label class="checkbox-label" style="color: #94A3B8;">
+                        <input type="checkbox" checked> Remember me
+                    </label>
+                    <a href="https://www.laredofire.com/SSLFolder/login.aspx?Mem=True" class="forgot-link" style="color: var(--accent);">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn-login-submit" style="width: 100%; padding: 14px;">Sign In to PensionEZ</button>
+            </form>
+
+            <div class="modal-footer-text" style="margin-top: 24px; text-align: center; color: #94A3B8; font-size: 0.85rem;">
+                <p>Need access? Contact Jaime Jasso, Pension Administrator, at <a href="tel:956-717-8018" style="color: var(--accent);">956-717-8018</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer" style="background: rgba(15, 23, 42, 0.95); border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 20px 0;">
+        <div class="container text-center">
+            <p style="color: #64748B; font-size: 0.85rem;">&copy; 2026 Laredo Firefighters Retirement System. 5219 Tesoro Plaza Dr., Laredo, TX 78041.</p>
+        </div>
+    </footer>
+
+    <script>
+        function switchPageLoginTab(type) {
+            const memberBtn = document.getElementById('pageTabMember');
+            const staffBtn = document.getElementById('pageTabStaff');
+            const form = document.getElementById('pageLoginForm');
+            
+            if (type === 'staff') {
+                memberBtn.classList.remove('active');
+                staffBtn.classList.add('active');
+                form.action = 'https://www.laredofire.com/SSLFolder/login.aspx';
+            } else {
+                staffBtn.classList.remove('active');
+                memberBtn.classList.add('active');
+                form.action = 'https://www.laredofire.com/SSLFolder/login.aspx?Mem=True';
+            }
+        }
+    </script>
+</body>
+</html>

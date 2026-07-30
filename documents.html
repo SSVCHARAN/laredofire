@@ -1,0 +1,2285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laredo Firefighters Retirement System | Public Records Repository</title>
+    <meta name="description" content="Searchable public document repository of the Laredo Firefighters Retirement System. Agendas, financial audits, investment performance, policies, PRB requirements, legal QDROs, and forms.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .year-filter-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+            padding: 12px 16px;
+            background: #F8FAFC;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        .year-filter-label {
+            font-family: var(--font-heading);
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-right: 4px;
+        }
+        .btn-year {
+            background: #FFFFFF;
+            border: 1px solid var(--border);
+            color: #334155;
+            font-family: var(--font-heading);
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-year:hover, .btn-year.active {
+            background: var(--primary);
+            color: #FFFFFF;
+            border-color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="brand-logo">
+                <div class="logo-badge">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L3 9v11a2 2 0 0 1-2 2h14a2 2 0 0 1-2-2V9l-9-7z"/><path d="M12 7v7"/><path d="M9 11h6"/></svg>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">LAREDO FIREFIGHTERS</span>
+                    <span class="brand-sub">RETIREMENT SYSTEM</span>
+                </div>
+            </a>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="plan-document.html" class="nav-link">Plan Document</a></li>
+                    <li><a href="documents.html" class="nav-link active">Public Records</a></li>
+                    <li><a href="trustees.html" class="nav-link">Trustees & Staff</a></li>
+                    <li><a href="mission.html" class="nav-link">Mission</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <a href="login.html" class="btn-primary">PensionEZ Login</a>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="mobile-drawer-header">
+            <div class="brand-text">
+                <span class="brand-name">LAREDO FIREFIGHTERS</span>
+                <span class="brand-sub">RETIREMENT SYSTEM</span>
+            </div>
+            <button class="mobile-close" id="mobileClose">&times;</button>
+        </div>
+        <ul class="mobile-nav-list">
+            <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+            <li><a href="plan-document.html" class="mobile-nav-link">Plan Document</a></li>
+            <li><a href="documents.html" class="mobile-nav-link">Public Records & Audits</a></li>
+            <li><a href="trustees.html" class="mobile-nav-link">Trustees & Staff</a></li>
+            <li><a href="mission.html" class="mobile-nav-link">Mission Statement</a></li>
+            <li><a href="contact.html" class="mobile-nav-link">Contact Us</a></li>
+            <li><a href="login.html" class="mobile-nav-link">PensionEZ Portal Login</a></li>
+        </ul>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Public Records Repository (219 Official Documents)</h1>
+            <p>Select a category from the left menu or filter by year to view official system records.</p>
+        </div>
+    </section>
+
+    <!-- Document Section with Sidebar & Main Grid -->
+    <main class="doc-section">
+        <div class="container doc-layout">
+            
+            <!-- Left Sidebar Navigation -->
+            <aside class="doc-sidebar">
+                <div class="sidebar-title">Document Categories</div>
+                <ul class="sidebar-menu">
+                    <li><button class="sidebar-btn active" data-cat="agendas" onclick="selectCategory('agendas', this)">AGENDAS AND MINUTES</button></li>
+                    <li><button class="sidebar-btn" data-cat="financials" onclick="selectCategory('financials', this)">FINANCIAL</button></li>
+                    <li><button class="sidebar-btn" data-cat="documents" onclick="selectCategory('documents', this)">DOCUMENTS</button></li>
+                    <li><button class="sidebar-btn" data-cat="policies" onclick="selectCategory('policies', this)">POLICIES</button></li>
+                    <li><button class="sidebar-btn" data-cat="investments" onclick="selectCategory('investments', this)">INVESTMENT HISTORY</button></li>
+                    <li><button class="sidebar-btn" data-cat="prb" onclick="selectCategory('prb', this)">PRB REQUIREMENTS</button></li>
+                    <li><button class="sidebar-btn" data-cat="legal" onclick="selectCategory('legal', this)">LEGAL</button></li>
+                    <li><button class="sidebar-btn" data-cat="forms" onclick="selectCategory('forms', this)">FORMS</button></li>
+                </ul>
+            </aside>
+
+            <!-- Right Main Content Area -->
+            <section class="doc-main-content">
+                <div class="doc-content-header">
+                    <div>
+                        <h2 class="doc-content-title" id="categoryHeader">Investment History</h2>
+                    </div>
+                    <div class="search-box-clean">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        <input type="text" id="docSearch" placeholder="Search category documents..." oninput="renderGrid()">
+                    </div>
+                </div>
+
+                <!-- Year Group Filter Bar -->
+                <div class="year-filter-bar" id="yearFilterBar">
+                    <span class="year-filter-label">Filter by Year:</span>
+                    <button class="btn-year active" onclick="selectYear('all', this)">All Years</button>
+                </div>
+
+                <!-- Dynamic Document Icon Grid -->
+                <div class="doc-icon-grid" id="docGrid"></div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h4>Laredo Firefighters Retirement System</h4>
+                <p>Public retirement system providing benefit administration and financial stewardship for Laredo firefighters.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Navigation</h5>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="plan-document.html">Plan Document</a></li>
+                    <li><a href="documents.html">Public Records</a></li>
+                    <li><a href="trustees.html">Board of Trustees</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Categories</h5>
+                <ul>
+                    <li><a href="documents.html?category=prb">PRB Requirements</a></li>
+                    <li><a href="documents.html?category=investments">Investment History</a></li>
+                    <li><a href="documents.html?category=financials">Financial Audits</a></li>
+                    <li><a href="documents.html?category=legal">Legal Notices (QDRO)</a></li>
+                    <li><a href="documents.html?category=forms">Member Forms</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Office Contact</h5>
+                <p style="font-size: 0.85rem;">5219 Tesoro Plaza Dr.<br>Laredo, TX 78041<br>Phone: 956-717-8018</p>
+            </div>
+        </div>
+        <div class="footer-bottom-text">
+            <p>&copy; 2026 Laredo Firefighters Retirement System. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+            <script>
+        const allDocuments = [
+    {
+        "id": 1,
+        "category": "agendas",
+        "year": "2026",
+        "title": "Board Meeting Minutes (Apr 22, 2026)",
+        "sub": "Official LFRS Board Minutes \u2022 Apr 22, 2026",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M04222026.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 2,
+        "category": "agendas",
+        "year": "2026",
+        "title": "Board Meeting Minutes (Mar 18, 2026)",
+        "sub": "Official LFRS Board Minutes \u2022 Mar 18, 2026",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M03182026.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 3,
+        "category": "agendas",
+        "year": "2026",
+        "title": "Board Meeting Minutes (Feb 19, 2026)",
+        "sub": "Official LFRS Board Minutes \u2022 Feb 19, 2026",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M02192026.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 4,
+        "category": "agendas",
+        "year": "2026",
+        "title": "Board Meeting Minutes (Jan 22, 2026)",
+        "sub": "Official LFRS Board Minutes \u2022 Jan 22, 2026",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M01222026.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 5,
+        "category": "agendas",
+        "year": "2026",
+        "title": "Board Meeting Agenda (Apr 22, 2026)",
+        "sub": "Official LFRS Board Agenda \u2022 Apr 22, 2026",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A4222026.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 6,
+        "category": "agendas",
+        "year": "2026",
+        "title": "Board Meeting Agenda (Jun 30, 2026)",
+        "sub": "Official LFRS Board Agenda \u2022 Jun 30, 2026",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A06302026.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 7,
+        "category": "agendas",
+        "year": "2026",
+        "title": "Board Meeting Agenda (Jun 24, 2026)",
+        "sub": "Official LFRS Board Agenda \u2022 Jun 24, 2026",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A06242026.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 8,
+        "category": "agendas",
+        "year": "2026",
+        "title": "Board Meeting Agenda (May 28, 2026)",
+        "sub": "Official LFRS Board Agenda \u2022 May 28, 2026",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A05282026.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 9,
+        "category": "agendas",
+        "year": "2026",
+        "title": "Board Meeting Agenda (Mar 18, 2026)",
+        "sub": "Official LFRS Board Agenda \u2022 Mar 18, 2026",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A03182026.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 10,
+        "category": "agendas",
+        "year": "2026",
+        "title": "Board Meeting Agenda (Feb 19, 2026)",
+        "sub": "Official LFRS Board Agenda \u2022 Feb 19, 2026",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A02192026.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 11,
+        "category": "agendas",
+        "year": "2026",
+        "title": "Board Meeting Agenda (Jan 22, 2026)",
+        "sub": "Official LFRS Board Agenda \u2022 Jan 22, 2026",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A01222026.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 12,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Minutes (Feb 27, 2025)",
+        "sub": "Official LFRS Board Minutes \u2022 Feb 27, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M2272025.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 13,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Minutes (Feb 20, 2025)",
+        "sub": "Official LFRS Board Minutes \u2022 Feb 20, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M2202025.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 14,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Minutes (Dec 18, 2025)",
+        "sub": "Official LFRS Board Minutes \u2022 Dec 18, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M12182025.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 15,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Minutes (Nov 18, 2025)",
+        "sub": "Official LFRS Board Minutes \u2022 Nov 18, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M11182025.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 16,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Minutes (Oct 22, 2025)",
+        "sub": "Official LFRS Board Minutes \u2022 Oct 22, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M10222025.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 17,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Minutes (Sep 18, 2025)",
+        "sub": "Official LFRS Board Minutes \u2022 Sep 18, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M09182025.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 18,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Minutes (Aug 20, 2025)",
+        "sub": "Official LFRS Board Minutes \u2022 Aug 20, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M08202025.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 19,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Minutes (Jul 17, 2025)",
+        "sub": "Official LFRS Board Minutes \u2022 Jul 17, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M07172025.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 20,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Minutes (Jun 18, 2025)",
+        "sub": "Official LFRS Board Minutes \u2022 Jun 18, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M06182025.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 21,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Minutes (May 27, 2025)",
+        "sub": "Official LFRS Board Minutes \u2022 May 27, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M05272025.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 22,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Minutes (Apr 16, 2025)",
+        "sub": "Official LFRS Board Minutes \u2022 Apr 16, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M04162025.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 23,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Minutes (Mar 19, 2025)",
+        "sub": "Official LFRS Board Minutes \u2022 Mar 19, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M03192025.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 24,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Minutes (Jan 22, 2025)",
+        "sub": "Official LFRS Board Minutes \u2022 Jan 22, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M01222025.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 25,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Agenda (May 27, 2025)",
+        "sub": "Official LFRS Board Agenda \u2022 May 27, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A5272025.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 26,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Agenda (Apr 16, 2025)",
+        "sub": "Official LFRS Board Agenda \u2022 Apr 16, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A4162025.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 27,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Agenda (Feb 27, 2025)",
+        "sub": "Official LFRS Board Agenda \u2022 Feb 27, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A2272025.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 28,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Agenda (Dec 18, 2025)",
+        "sub": "Official LFRS Board Agenda \u2022 Dec 18, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A12182025.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 29,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Agenda (Nov 18, 2025)",
+        "sub": "Official LFRS Board Agenda \u2022 Nov 18, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A11182025.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 30,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Agenda (Oct 22, 2025)",
+        "sub": "Official LFRS Board Agenda \u2022 Oct 22, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A10222025.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 31,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Agenda (Sep 18, 2025)",
+        "sub": "Official LFRS Board Agenda \u2022 Sep 18, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A09182025.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 32,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Agenda (Aug 20, 2025)",
+        "sub": "Official LFRS Board Agenda \u2022 Aug 20, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A08202025.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 33,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Agenda (Jul 17, 2025)",
+        "sub": "Official LFRS Board Agenda \u2022 Jul 17, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A07172025.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 34,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Agenda (Jun 18, 2025)",
+        "sub": "Official LFRS Board Agenda \u2022 Jun 18, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A06182025.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 35,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Agenda (Jun 5, 2025)",
+        "sub": "Official LFRS Board Agenda \u2022 Jun 5, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A06052025.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 36,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Agenda (May 27, 2025)",
+        "sub": "Official LFRS Board Agenda \u2022 May 27, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A05272025.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 37,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Agenda (Mar 19, 2025)",
+        "sub": "Official LFRS Board Agenda \u2022 Mar 19, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A03192025.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 38,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Agenda (Feb 20, 2025)",
+        "sub": "Official LFRS Board Agenda \u2022 Feb 20, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A02202025.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 39,
+        "category": "agendas",
+        "year": "2025",
+        "title": "Board Meeting Agenda (Jan 22, 2025)",
+        "sub": "Official LFRS Board Agenda \u2022 Jan 22, 2025",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A01222025.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 40,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Minutes (Jul 17, 2024)",
+        "sub": "Official LFRS Board Minutes \u2022 Jul 17, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M7172024.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 41,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Minutes (Dec 17, 2024)",
+        "sub": "Official LFRS Board Minutes \u2022 Dec 17, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M12172024.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 42,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Minutes (Nov 22, 2024)",
+        "sub": "Official LFRS Board Minutes \u2022 Nov 22, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M11222024.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 43,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Minutes (Oct 24, 2024)",
+        "sub": "Official LFRS Board Minutes \u2022 Oct 24, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M10242024.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 44,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Minutes (Oct 14, 2024)",
+        "sub": "Official LFRS Board Minutes \u2022 Oct 14, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M10142024.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 45,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Minutes (Oct 2, 2024)",
+        "sub": "Official LFRS Board Minutes \u2022 Oct 2, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M10022024.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 46,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Minutes (Sep 18, 2024)",
+        "sub": "Official LFRS Board Minutes \u2022 Sep 18, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M09182024.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 47,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Minutes (Aug 28, 2024)",
+        "sub": "Official LFRS Board Minutes \u2022 Aug 28, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M08282024.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 48,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Minutes (Jun 25, 2024)",
+        "sub": "Official LFRS Board Minutes \u2022 Jun 25, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M06252024.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 49,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Minutes (May 29, 2024)",
+        "sub": "Official LFRS Board Minutes \u2022 May 29, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M05292024.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 50,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Minutes (Apr 24, 2024)",
+        "sub": "Official LFRS Board Minutes \u2022 Apr 24, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M04242024.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 51,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Minutes (Mar 22, 2024)",
+        "sub": "Official LFRS Board Minutes \u2022 Mar 22, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M03222024.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 52,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Minutes (Feb 27, 2024)",
+        "sub": "Official LFRS Board Minutes \u2022 Feb 27, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M02272024.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 53,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Minutes (Jan 25, 2024)",
+        "sub": "Official LFRS Board Minutes \u2022 Jan 25, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M01252024.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 54,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Agenda (Sep 18, 2024)",
+        "sub": "Official LFRS Board Agenda \u2022 Sep 18, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A9182024.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 55,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Agenda (Aug 28, 2024)",
+        "sub": "Official LFRS Board Agenda \u2022 Aug 28, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A8282024.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 56,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Agenda (Jul 15, 2024)",
+        "sub": "Official LFRS Board Agenda \u2022 Jul 15, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A7152024.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 57,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Agenda (Jun 25, 2024)",
+        "sub": "Official LFRS Board Agenda \u2022 Jun 25, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A6252024.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 58,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Agenda (May 15, 2024)",
+        "sub": "Official LFRS Board Agenda \u2022 May 15, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A5152024.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 59,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Agenda (Dec 17, 2024)",
+        "sub": "Official LFRS Board Agenda \u2022 Dec 17, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A12172024.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 60,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Agenda (Nov 22, 2024)",
+        "sub": "Official LFRS Board Agenda \u2022 Nov 22, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A11222024.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 61,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Agenda (Oct 2, 2024)",
+        "sub": "Official LFRS Board Agenda \u2022 Oct 2, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A10022024.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 62,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Agenda (Sep 18, 2024)",
+        "sub": "Official LFRS Board Agenda \u2022 Sep 18, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A09182024.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 63,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Agenda (Aug 28, 2024)",
+        "sub": "Official LFRS Board Agenda \u2022 Aug 28, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A08282024.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 64,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Agenda (Jul 17, 2024)",
+        "sub": "Official LFRS Board Agenda \u2022 Jul 17, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A07172024.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 65,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Agenda (Jun 25, 2024)",
+        "sub": "Official LFRS Board Agenda \u2022 Jun 25, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A06252024.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 66,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Agenda (May 29, 2024)",
+        "sub": "Official LFRS Board Agenda \u2022 May 29, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A05292024.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 67,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Agenda (May 15, 2024)",
+        "sub": "Official LFRS Board Agenda \u2022 May 15, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A05152024.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 68,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Agenda (Apr 24, 2024)",
+        "sub": "Official LFRS Board Agenda \u2022 Apr 24, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A04242024.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 69,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Agenda (Mar 22, 2024)",
+        "sub": "Official LFRS Board Agenda \u2022 Mar 22, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A03222024.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 70,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Agenda (Feb 27, 2024)",
+        "sub": "Official LFRS Board Agenda \u2022 Feb 27, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A02272024.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 71,
+        "category": "agendas",
+        "year": "2024",
+        "title": "Board Meeting Agenda (Jan 25, 2024)",
+        "sub": "Official LFRS Board Agenda \u2022 Jan 25, 2024",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A01252024.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 72,
+        "category": "agendas",
+        "year": "2023",
+        "title": "Board Meeting Minutes (Mar 28, 2023)",
+        "sub": "Official LFRS Board Minutes \u2022 Mar 28, 2023",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M3282023.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 73,
+        "category": "agendas",
+        "year": "2023",
+        "title": "Board Meeting Minutes (Dec 26, 2023)",
+        "sub": "Official LFRS Board Minutes \u2022 Dec 26, 2023",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M12262023.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 74,
+        "category": "agendas",
+        "year": "2023",
+        "title": "Board Meeting Minutes (Nov 29, 2023)",
+        "sub": "Official LFRS Board Minutes \u2022 Nov 29, 2023",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M11292023.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 75,
+        "category": "agendas",
+        "year": "2023",
+        "title": "Board Meeting Minutes (Oct 18, 2023)",
+        "sub": "Official LFRS Board Minutes \u2022 Oct 18, 2023",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M10182023.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 76,
+        "category": "agendas",
+        "year": "2023",
+        "title": "Board Meeting Minutes (Aug 25, 2023)",
+        "sub": "Official LFRS Board Minutes \u2022 Aug 25, 2023",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M08252023.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 77,
+        "category": "agendas",
+        "year": "2023",
+        "title": "Board Meeting Minutes (Jul 20, 2023)",
+        "sub": "Official LFRS Board Minutes \u2022 Jul 20, 2023",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M07202023.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 78,
+        "category": "agendas",
+        "year": "2023",
+        "title": "Board Meeting Minutes (Jun 29, 2023)",
+        "sub": "Official LFRS Board Minutes \u2022 Jun 29, 2023",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M06292023.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 79,
+        "category": "agendas",
+        "year": "2023",
+        "title": "Board Meeting Minutes (May 30, 2023)",
+        "sub": "Official LFRS Board Minutes \u2022 May 30, 2023",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M05302023.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 80,
+        "category": "agendas",
+        "year": "2023",
+        "title": "Board Meeting Minutes (Apr 18, 2023)",
+        "sub": "Official LFRS Board Minutes \u2022 Apr 18, 2023",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M04182023.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 81,
+        "category": "agendas",
+        "year": "2023",
+        "title": "Board Meeting Minutes (Mar 28, 2023)",
+        "sub": "Official LFRS Board Minutes \u2022 Mar 28, 2023",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M03282023.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 82,
+        "category": "agendas",
+        "year": "2023",
+        "title": "Board Meeting Minutes (Feb 23, 2023)",
+        "sub": "Official LFRS Board Minutes \u2022 Feb 23, 2023",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M02232023.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 83,
+        "category": "agendas",
+        "year": "2023",
+        "title": "Board Meeting Minutes (Jan 18, 2023)",
+        "sub": "Official LFRS Board Minutes \u2022 Jan 18, 2023",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M01182023.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 84,
+        "category": "agendas",
+        "year": "2023",
+        "title": "Board Meeting Agenda (May 30, 2023)",
+        "sub": "Official LFRS Board Agenda \u2022 May 30, 2023",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A5302023.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 85,
+        "category": "agendas",
+        "year": "2023",
+        "title": "Board Meeting Agenda (Apr 18, 2023)",
+        "sub": "Official LFRS Board Agenda \u2022 Apr 18, 2023",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A4182023.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 86,
+        "category": "agendas",
+        "year": "2023",
+        "title": "Board Meeting Agenda (Mar 28, 2023)",
+        "sub": "Official LFRS Board Agenda \u2022 Mar 28, 2023",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A3282023.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 87,
+        "category": "agendas",
+        "year": "2023",
+        "title": "Board Meeting Agenda (Dec 26, 2023)",
+        "sub": "Official LFRS Board Agenda \u2022 Dec 26, 2023",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A12262023.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 88,
+        "category": "agendas",
+        "year": "2023",
+        "title": "Board Meeting Agenda (Nov 29, 2023)",
+        "sub": "Official LFRS Board Agenda \u2022 Nov 29, 2023",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A11292023.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 89,
+        "category": "agendas",
+        "year": "2023",
+        "title": "Board Meeting Agenda (Oct 18, 2023)",
+        "sub": "Official LFRS Board Agenda \u2022 Oct 18, 2023",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A10182023.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 90,
+        "category": "agendas",
+        "year": "2023",
+        "title": "Board Meeting Agenda (Sep 21, 2023)",
+        "sub": "Official LFRS Board Agenda \u2022 Sep 21, 2023",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A09212023.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 91,
+        "category": "agendas",
+        "year": "2023",
+        "title": "Board Meeting Agenda (Aug 25, 2023)",
+        "sub": "Official LFRS Board Agenda \u2022 Aug 25, 2023",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A08252023.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 92,
+        "category": "agendas",
+        "year": "2023",
+        "title": "Board Meeting Agenda (Jul 20, 2023)",
+        "sub": "Official LFRS Board Agenda \u2022 Jul 20, 2023",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A07202023.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 93,
+        "category": "agendas",
+        "year": "2023",
+        "title": "Board Meeting Agenda (Jun 29, 2023)",
+        "sub": "Official LFRS Board Agenda \u2022 Jun 29, 2023",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A06292023.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 94,
+        "category": "agendas",
+        "year": "2023",
+        "title": "Board Meeting Agenda (Feb 23, 2023)",
+        "sub": "Official LFRS Board Agenda \u2022 Feb 23, 2023",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A02232023.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 95,
+        "category": "agendas",
+        "year": "2023",
+        "title": "Board Meeting Agenda (Jan 18, 2023)",
+        "sub": "Official LFRS Board Agenda \u2022 Jan 18, 2023",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A01182023.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 96,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Minutes (Apr 27, 2022)",
+        "sub": "Official LFRS Board Minutes \u2022 Apr 27, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M4272022.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 97,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Minutes (Dec 22, 2022)",
+        "sub": "Official LFRS Board Minutes \u2022 Dec 22, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M12222022.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 98,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Minutes (Nov 16, 2022)",
+        "sub": "Official LFRS Board Minutes \u2022 Nov 16, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M11162022.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 99,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Minutes (Oct 20, 2022)",
+        "sub": "Official LFRS Board Minutes \u2022 Oct 20, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M10202022.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 100,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Minutes (Sep 21, 2022)",
+        "sub": "Official LFRS Board Minutes \u2022 Sep 21, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M09212022.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 101,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Minutes (Aug 25, 2022)",
+        "sub": "Official LFRS Board Minutes \u2022 Aug 25, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M08252022.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 102,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Minutes (Jul 20, 2022)",
+        "sub": "Official LFRS Board Minutes \u2022 Jul 20, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M07202022.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 103,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Minutes (Jul 7, 2022)",
+        "sub": "Official LFRS Board Minutes \u2022 Jul 7, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M07072022.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 104,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Minutes (Jun 16, 2022)",
+        "sub": "Official LFRS Board Minutes \u2022 Jun 16, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M06162022.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 105,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Minutes (May 27, 2022)",
+        "sub": "Official LFRS Board Minutes \u2022 May 27, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M05272022.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 106,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Minutes (Apr 27, 2022)",
+        "sub": "Official LFRS Board Minutes \u2022 Apr 27, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M04272022.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 107,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Minutes (Mar 16, 2022)",
+        "sub": "Official LFRS Board Minutes \u2022 Mar 16, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M03162022.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 108,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Minutes (Feb 22, 2022)",
+        "sub": "Official LFRS Board Minutes \u2022 Feb 22, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M02222022.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 109,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Minutes (Jan 20, 2022)",
+        "sub": "Official LFRS Board Minutes \u2022 Jan 20, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/M01202022.pdf",
+        "tag": "Minutes"
+    },
+    {
+        "id": 110,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Agenda (Jul 20, 2022)",
+        "sub": "Official LFRS Board Agenda \u2022 Jul 20, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A7202022.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 111,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Agenda (May 27, 2022)",
+        "sub": "Official LFRS Board Agenda \u2022 May 27, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A5272022.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 112,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Agenda (Apr 20, 2022)",
+        "sub": "Official LFRS Board Agenda \u2022 Apr 20, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A4202022.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 113,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Agenda (Mar 15, 2022)",
+        "sub": "Official LFRS Board Agenda \u2022 Mar 15, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A3152022.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 114,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Agenda (Feb 22, 2022)",
+        "sub": "Official LFRS Board Agenda \u2022 Feb 22, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A2222022.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 115,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Agenda (Dec 22, 2022)",
+        "sub": "Official LFRS Board Agenda \u2022 Dec 22, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A12222022.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 116,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Agenda (Jan 20, 2022)",
+        "sub": "Official LFRS Board Agenda \u2022 Jan 20, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A1202022.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 117,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Agenda (Nov 16, 2022)",
+        "sub": "Official LFRS Board Agenda \u2022 Nov 16, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A11162022.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 118,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Agenda (Jan 5, 2022)",
+        "sub": "Official LFRS Board Agenda \u2022 Jan 5, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A1052022.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 119,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Agenda (Oct 20, 2022)",
+        "sub": "Official LFRS Board Agenda \u2022 Oct 20, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A10202022.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 120,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Agenda (Sep 21, 2022)",
+        "sub": "Official LFRS Board Agenda \u2022 Sep 21, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A09212022.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 121,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Agenda (Aug 25, 2022)",
+        "sub": "Official LFRS Board Agenda \u2022 Aug 25, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A08252022.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 122,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Agenda (Jul 26, 2022)",
+        "sub": "Official LFRS Board Agenda \u2022 Jul 26, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A07262022.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 123,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Agenda (Jul 7, 2022)",
+        "sub": "Official LFRS Board Agenda \u2022 Jul 7, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A07072022.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 124,
+        "category": "agendas",
+        "year": "2022",
+        "title": "Board Meeting Agenda (Jun 16, 2022)",
+        "sub": "Official LFRS Board Agenda \u2022 Jun 16, 2022",
+        "url": "https://www.laredofire.com/LOFULF/LOFAGS/A06162022.pdf",
+        "tag": "Agenda"
+    },
+    {
+        "id": 125,
+        "category": "financials",
+        "year": "2025",
+        "title": "09/30/2025 Audit",
+        "sub": "Annual Financial Audit Report (09/30/2025)",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/Laredo%20Fire%20Audit%20Report%209.25.pdf",
+        "tag": "Audit"
+    },
+    {
+        "id": 126,
+        "category": "financials",
+        "year": "2024",
+        "title": "09/30/2024 Audit",
+        "sub": "Annual Financial Audit Report (09/30/2024)",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/Laredo%20Fire%20Audit%20Report%209.30.24.pdf",
+        "tag": "Audit"
+    },
+    {
+        "id": 127,
+        "category": "financials",
+        "year": "2023",
+        "title": "09/30/2023 Audit",
+        "sub": "Annual Financial Audit Report (09/30/2023)",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/RPT%20Laredo%20Fire%209.23.pdf",
+        "tag": "Audit"
+    },
+    {
+        "id": 128,
+        "category": "financials",
+        "year": "2022",
+        "title": "09/30/2022 Audit",
+        "sub": "Annual Financial Audit Report (09/30/2022)",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/RPT%20Laredo%20Fire%209.22.pdf",
+        "tag": "Audit"
+    },
+    {
+        "id": 129,
+        "category": "financials",
+        "year": "2021",
+        "title": "09/30/2021 Audit",
+        "sub": "Annual Financial Audit Report (09/30/2021)",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/RPT%20Laredo%20Fire%209.21v2.pdf",
+        "tag": "Audit"
+    },
+    {
+        "id": 130,
+        "category": "financials",
+        "year": "2020",
+        "title": "09/30/2020 Audit",
+        "sub": "Annual Financial Audit Report (09/30/2020)",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/Laredo%20Fire%20Rpt%209.20.pdf",
+        "tag": "Audit"
+    },
+    {
+        "id": 131,
+        "category": "financials",
+        "year": "2019",
+        "title": "09/30/2019 Audit",
+        "sub": "Annual Financial Audit Report (09/30/2019)",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/Laredo%20Fire%20RPT%209.19.pdf",
+        "tag": "Audit"
+    },
+    {
+        "id": 132,
+        "category": "financials",
+        "year": "2018",
+        "title": "09/30/2018 Audit",
+        "sub": "Annual Financial Audit Report (09/30/2018)",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/Laredo%20Rpt.pdf",
+        "tag": "Audit"
+    },
+    {
+        "id": 133,
+        "category": "financials",
+        "year": "2017",
+        "title": "09/30/2017 Audit",
+        "sub": "Annual Financial Audit Report (09/30/2017)",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/Laredo%20Fire%20report%209.17.pdf",
+        "tag": "Audit"
+    },
+    {
+        "id": 134,
+        "category": "financials",
+        "year": "2016",
+        "title": "09/30/2016 Audit",
+        "sub": "Annual Financial Audit Report (09/30/2016)",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/RPT%20Laredo%20Fire.pdf",
+        "tag": "Audit"
+    },
+    {
+        "id": 135,
+        "category": "financials",
+        "year": "2015",
+        "title": "09/30/2015 Audit",
+        "sub": "Annual Financial Audit Report (09/30/2015)",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/Audit%20Report%20Period%20Ending%2009302015.pdf",
+        "tag": "Audit"
+    },
+    {
+        "id": 136,
+        "category": "financials",
+        "year": "2014",
+        "title": "09/30/2014 Audit",
+        "sub": "Annual Financial Audit Report (09/30/2014)",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/Audit%20Financial%20Report%20-%2009-30-2014.pdf",
+        "tag": "Audit"
+    },
+    {
+        "id": 137,
+        "category": "documents",
+        "year": "2024",
+        "title": "Qualified Domestic Relations Orders",
+        "sub": "Official System Document",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/Policy%20Statement%208-18%20cln.pdf",
+        "tag": "PDF"
+    },
+    {
+        "id": 138,
+        "category": "documents",
+        "year": "2024",
+        "title": "Summary Plan",
+        "sub": "Official System Document",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/LaredoJan12023-clean-01222026.pdf",
+        "tag": "PDF"
+    },
+    {
+        "id": 139,
+        "category": "documents",
+        "year": "2024",
+        "title": "Actuarial Valuation 2024",
+        "sub": "Official System Document",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/2025.07.11_2024_Actuarial_Valuation-Laredo_Fire-corrected.pdf",
+        "tag": "PDF"
+    },
+    {
+        "id": 140,
+        "category": "documents",
+        "year": "2022",
+        "title": "Actuarial Valuation 2022",
+        "sub": "Official System Document",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/laredo-09-30-2022.pdf",
+        "tag": "PDF"
+    },
+    {
+        "id": 141,
+        "category": "documents",
+        "year": "2024",
+        "title": "TLFFRA  (Statute)",
+        "sub": "Official System Document",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/2019-TLFFRA-Statute.pdf",
+        "tag": "PDF"
+    },
+    {
+        "id": 142,
+        "category": "documents",
+        "year": "2020",
+        "title": "Actuarial Valuation 2020",
+        "sub": "Official System Document",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/laredo-09-30-2020.pdf",
+        "tag": "PDF"
+    },
+    {
+        "id": 143,
+        "category": "documents",
+        "year": "2018",
+        "title": "Actiarial Valuation 2018",
+        "sub": "Official System Document",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/laredo-09-30-2018.pdf",
+        "tag": "PDF"
+    },
+    {
+        "id": 144,
+        "category": "documents",
+        "year": "2024",
+        "title": "Government Code",
+        "sub": "Official System Document",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/2017-Government-Code-Title-8-Subtitle-A.pdf",
+        "tag": "PDF"
+    },
+    {
+        "id": 145,
+        "category": "documents",
+        "year": "2012",
+        "title": "Actuarial Valuation 2012",
+        "sub": "Official System Document",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/val-9-30-2012.pdf",
+        "tag": "PDF"
+    },
+    {
+        "id": 146,
+        "category": "documents",
+        "year": "2014",
+        "title": "Actuarial Valuation 2014",
+        "sub": "Official System Document",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/laredo-09-30-2014.pdf",
+        "tag": "PDF"
+    },
+    {
+        "id": 147,
+        "category": "documents",
+        "year": "2016",
+        "title": "Actuarial Valuation 2016",
+        "sub": "Official System Document",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/laredo-09-30-2016.pdf",
+        "tag": "PDF"
+    },
+    {
+        "id": 148,
+        "category": "policies",
+        "year": "2024",
+        "title": "Statement of Investment Objectives & Policies",
+        "sub": "Board & System Governance Policy",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/Laredo%20IPS%2005.2026.pdf",
+        "tag": "Policy"
+    },
+    {
+        "id": 149,
+        "category": "policies",
+        "year": "2024",
+        "title": "Funding Policy",
+        "sub": "Board & System Governance Policy",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/LFFRS-Funding-Policy-Effdate-12182019-TGCS-802.2011.pdf",
+        "tag": "Policy"
+    },
+    {
+        "id": 150,
+        "category": "policies",
+        "year": "2024",
+        "title": "Gifts Gratuties Policy",
+        "sub": "Board & System Governance Policy",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/Gifts%20Gratuities%20Policy-S-updated-10242019.pdf",
+        "tag": "Policy"
+    },
+    {
+        "id": 151,
+        "category": "policies",
+        "year": "2024",
+        "title": "Attendance Policy",
+        "sub": "Board & System Governance Policy",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/Attendance%20Policy.pdf",
+        "tag": "Policy"
+    },
+    {
+        "id": 152,
+        "category": "policies",
+        "year": "2024",
+        "title": "Code of Ethics Policy",
+        "sub": "Board & System Governance Policy",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/Code%20of%20Ethics%20Policy.pdf",
+        "tag": "Policy"
+    },
+    {
+        "id": 153,
+        "category": "policies",
+        "year": "2024",
+        "title": "Credit Card Policy",
+        "sub": "Board & System Governance Policy",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/Credit%20Card%20Policy.pdf",
+        "tag": "Policy"
+    },
+    {
+        "id": 154,
+        "category": "policies",
+        "year": "2024",
+        "title": "Non-Endorsement Policy",
+        "sub": "Board & System Governance Policy",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/Non-Endorsement%20Policy.pdf",
+        "tag": "Policy"
+    },
+    {
+        "id": 155,
+        "category": "policies",
+        "year": "2024",
+        "title": "Non-Participation Policy",
+        "sub": "Board & System Governance Policy",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/Non-Participation%20Policy.pdf",
+        "tag": "Policy"
+    },
+    {
+        "id": 156,
+        "category": "policies",
+        "year": "2024",
+        "title": "Travel Policy",
+        "sub": "Board & System Governance Policy",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/Travel%20Policy.pdf",
+        "tag": "Policy"
+    },
+    {
+        "id": 157,
+        "category": "policies",
+        "year": "2024",
+        "title": "Board Trustee Policy",
+        "sub": "Board & System Governance Policy",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/LaredoFRS-board-policy-final-june4s.pdf",
+        "tag": "Policy"
+    },
+    {
+        "id": 158,
+        "category": "investments",
+        "year": "2024",
+        "title": "1st Qtr FY 2024",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/LFFRS-FEG-12312023.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 159,
+        "category": "investments",
+        "year": "2024",
+        "title": "4th Qtr Fy2024",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/LFFRS-FEG-09302024.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 160,
+        "category": "investments",
+        "year": "2024",
+        "title": "3rd Qtr Fy2024",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/LFFRS-FEG-06302024.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 161,
+        "category": "investments",
+        "year": "2024",
+        "title": "2nd Qtr Fy2024",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/LFFRS-FEG-03312024.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 162,
+        "category": "investments",
+        "year": "2023",
+        "title": "4th Qtr FY2023",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/LFFRS-FEG-09302023.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 163,
+        "category": "investments",
+        "year": "2023",
+        "title": "2nd Qtr FY 2023",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/03-31-23%20Laredo%20Firefighters-summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 164,
+        "category": "investments",
+        "year": "2023",
+        "title": "1st Qtr FY 2023",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/12-31-22%20Laredo%20Firefighters-summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 165,
+        "category": "investments",
+        "year": "2022",
+        "title": "4th Qtr FY 2022",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/09-30-22%20Laredo%20Firefighters-summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 166,
+        "category": "investments",
+        "year": "2022",
+        "title": "3rd Qtr FY 2022",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/1%2003-31-22%20Laredo%20Firefighters%20-%20summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 167,
+        "category": "investments",
+        "year": "2022",
+        "title": "2nd Qtr FY 2022",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/1%2003-31-22%20Laredo%20Firefighters%20-%20summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 168,
+        "category": "investments",
+        "year": "2021",
+        "title": "4th Qtr FY 2021",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/1%2009-30-21%20Laredo%20Firefighters%20-Summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 169,
+        "category": "investments",
+        "year": "2022",
+        "title": "1st Qtr FY 2022",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/1%2012-31-21%20Laredo%20Firefighters%20-%20Summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 170,
+        "category": "investments",
+        "year": "2021",
+        "title": "3rd Qtr FY 2021",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/06-30-21%20Laredo%20Firefighters%20-Summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 171,
+        "category": "investments",
+        "year": "2021",
+        "title": "2nd Qtr FY 2021",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/2%2003-31-21%20Laredo%20Firefighters-summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 172,
+        "category": "investments",
+        "year": "2021",
+        "title": "1st Qtr FY 2021",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/2-31-2020%20Laredo%20Firefighters%20-Summary%20Report.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 173,
+        "category": "investments",
+        "year": "2020",
+        "title": "4th Qtr FY 2020",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/9-30-2020%20Laredo%20Firefighters%20-%20summary%20report.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 174,
+        "category": "investments",
+        "year": "2020",
+        "title": "3rd Qtr FY 2020",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/6-30-2020%20Laredo%20Firefighters%20-%20summary%20report.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 175,
+        "category": "investments",
+        "year": "2020",
+        "title": "2nd Qtr FY 2020",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/3-31-2020%20Laredo%20Firefighters-Summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 176,
+        "category": "investments",
+        "year": "2020",
+        "title": "1st Qtr FY 2020",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/2%2012-2019%20Laredo%20Firefighters%20-%20Summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 177,
+        "category": "investments",
+        "year": "2019",
+        "title": "4th Qtr FY 2019",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/3Q%20Laredo%20Report%20and%20Meeting%20Materials-summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 178,
+        "category": "investments",
+        "year": "2019",
+        "title": "3rd Qtr FY 2019",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/6-2019%20Laredo%20Firefighters-summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 179,
+        "category": "investments",
+        "year": "2019",
+        "title": "2nd Qtr FY 2019",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/3-2019%20Laredo%20Firefighters-Summay.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 180,
+        "category": "investments",
+        "year": "2019",
+        "title": "1st Qtr FY 2019",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/12-2018%20Laredo%20Firefighters-S.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 181,
+        "category": "investments",
+        "year": "2018",
+        "title": "4th Qtr FY 2018",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/9-2018%20Laredo%20Firefighters-summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 182,
+        "category": "investments",
+        "year": "2018",
+        "title": "3rd Qtr FY 2018",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/6-2018%20Laredo%20Firefighters-summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 183,
+        "category": "investments",
+        "year": "2018",
+        "title": "1st Qtr FY 2018",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/2017-12%20Laredo-summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 184,
+        "category": "investments",
+        "year": "2018",
+        "title": "2nd Qtr FY 2018",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/3-2018%20Laredo%20Firefighters%20-%20summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 185,
+        "category": "investments",
+        "year": "2017",
+        "title": "4th Qtr FY 2017",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/9-2017%20Laredo%20-%20summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 186,
+        "category": "investments",
+        "year": "2017",
+        "title": "3rd Qtr FY 2017",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/6-2017%20Laredo%20Firefighters%20%28003%29%20-%20summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 187,
+        "category": "investments",
+        "year": "2017",
+        "title": "2nd Qtr FY 2017",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/3-2017%20Laredo%20Firefighters%20-%20summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 188,
+        "category": "investments",
+        "year": "2017",
+        "title": "1st Qtr FY 2017",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/12-2016%20Laredo%20Firefighters%20-summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 189,
+        "category": "investments",
+        "year": "2016",
+        "title": "4th Qtr FY 2016",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/9-2016%20Laredo-Summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 190,
+        "category": "investments",
+        "year": "2016",
+        "title": "3rd Qtr FY 2016",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/6-2016%20Laredo%20Firefighters-SUMMARY.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 191,
+        "category": "investments",
+        "year": "2016",
+        "title": "2nd Qtr FY 2016",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/3-2016%20Laredo%20Firefighters%20-%20SUMMARY.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 192,
+        "category": "investments",
+        "year": "2015",
+        "title": "4th Qtr FY 2015",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/4-2015%20Laredo%20-summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 193,
+        "category": "investments",
+        "year": "2016",
+        "title": "1st Qtr FY 2016",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/1-2016%20Laredo%20-summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 194,
+        "category": "investments",
+        "year": "2015",
+        "title": "3rd Qtr FY 2015",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/6-2015%20Laredo%20-%20Summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 195,
+        "category": "investments",
+        "year": "2015",
+        "title": "2nd Qtr FY 2015",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/3-2015%20Laredo%20-summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 196,
+        "category": "investments",
+        "year": "2015",
+        "title": "1st Qtr FY 2015",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/2014-12%20Laredo-summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 197,
+        "category": "investments",
+        "year": "2014",
+        "title": "4th  Qtr FY 2014",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/2014-09%20Laredo-summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 198,
+        "category": "investments",
+        "year": "2014",
+        "title": "3rd  Qtr FY 2014",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/2014-06%20Laredo-summary.pdf",
+        "tag": "Report"
+    },
+    {
+        "id": 199,
+        "category": "investments",
+        "year": "2014",
+        "title": "2nd  Qtr FY 2014",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/2014-03%20Laredo%20Performance%20Report.jpg",
+        "tag": "Report"
+    },
+    {
+        "id": 200,
+        "category": "investments",
+        "year": "2014",
+        "title": "1st  Qtr FY 2014",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/dec2013.jpg",
+        "tag": "Report"
+    },
+    {
+        "id": 201,
+        "category": "investments",
+        "year": "2013",
+        "title": "4th  Qtr FY 2013",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/sept2013.jpg",
+        "tag": "Report"
+    },
+    {
+        "id": 202,
+        "category": "investments",
+        "year": "2013",
+        "title": "3rd  Qtr FY 2013",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/june2013.jpg",
+        "tag": "Report"
+    },
+    {
+        "id": 203,
+        "category": "investments",
+        "year": "2013",
+        "title": "2nd  Qtr FY 2013",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/mar2013.jpg",
+        "tag": "Report"
+    },
+    {
+        "id": 204,
+        "category": "investments",
+        "year": "2012",
+        "title": "1st  Qtr FY 2012",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/dec2012.jpg",
+        "tag": "Report"
+    },
+    {
+        "id": 205,
+        "category": "investments",
+        "year": "2012",
+        "title": "4th  Qtr FY 2012",
+        "sub": "Quarterly Investment Performance Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/sept2012.jpg",
+        "tag": "Report"
+    },
+    {
+        "id": 206,
+        "category": "prb",
+        "year": "2025",
+        "title": "Actuarial Audit Report",
+        "sub": "PRB Requirement (Pending Upload)",
+        "url": "#",
+        "tag": "PRB"
+    },
+    {
+        "id": 207,
+        "category": "prb",
+        "year": "2025",
+        "title": "Actuarial Valuation Report",
+        "sub": "PRB Filing \u2022 Actuarial Valuation",
+        "url": "https://www.laredofire.com/LOFULF/LOFPRBR/PRBR6302023270.pdf",
+        "tag": "PRB"
+    },
+    {
+        "id": 208,
+        "category": "prb",
+        "year": "2025",
+        "title": "Annual Returns Report",
+        "sub": "PRB Requirement (Pending Upload)",
+        "url": "#",
+        "tag": "PRB"
+    },
+    {
+        "id": 209,
+        "category": "prb",
+        "year": "2025",
+        "title": "Comprehensive Annual Financial Report",
+        "sub": "PRB Filing \u2022 CAFR Report",
+        "url": "https://www.laredofire.com/LOFULF/LOFPRBR/PRBR63020232519.pdf",
+        "tag": "PRB"
+    },
+    {
+        "id": 210,
+        "category": "prb",
+        "year": "2025",
+        "title": "Investment Policy",
+        "sub": "PRB Filing \u2022 Statement of Investment Policy",
+        "url": "https://www.laredofire.com/LOFULF/LOFPRBR/PRBR12420242636.pdf",
+        "tag": "PRB"
+    },
+    {
+        "id": 211,
+        "category": "prb",
+        "year": "2025",
+        "title": "Investment Returns and Assumptions Report",
+        "sub": "PRB Filing \u2022 Returns & Assumptions",
+        "url": "https://www.laredofire.com/LOFULF/LOFPRBR/PRBR63020231851.pdf",
+        "tag": "PRB"
+    },
+    {
+        "id": 212,
+        "category": "prb",
+        "year": "2025",
+        "title": "Registration Information",
+        "sub": "PRB Requirement (Pending Upload)",
+        "url": "#",
+        "tag": "PRB"
+    },
+    {
+        "id": 213,
+        "category": "prb",
+        "year": "2025",
+        "title": "Report of Members and Retirees",
+        "sub": "PRB Requirement (Pending Upload)",
+        "url": "#",
+        "tag": "PRB"
+    },
+    {
+        "id": 214,
+        "category": "prb",
+        "year": "2025",
+        "title": "Summary Plan Description",
+        "sub": "PRB Filing \u2022 SPD Document",
+        "url": "https://www.laredofire.com/LOFULF/LOFPRBR/PRBR63020235311.pdf",
+        "tag": "PRB"
+    },
+    {
+        "id": 215,
+        "category": "legal",
+        "year": "2024",
+        "title": "QDRO Model - Actives",
+        "sub": "QDRO Legal Order Model Template",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/Model%20QDRO%208-01-18%20cln.pdf",
+        "tag": "Legal"
+    },
+    {
+        "id": 216,
+        "category": "legal",
+        "year": "2024",
+        "title": "QDRO Model - Retirees",
+        "sub": "QDRO Legal Order Model Template",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/QDRO%20Model%20-%20Retirees.pdf",
+        "tag": "Legal"
+    },
+    {
+        "id": 217,
+        "category": "forms",
+        "year": "2025",
+        "title": "Designated Beneficiary - Retired",
+        "sub": "Official Member Application Form",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/DesignatedBeneficiary-Retired.pdf",
+        "tag": "Form"
+    },
+    {
+        "id": 218,
+        "category": "forms",
+        "year": "2025",
+        "title": "Designated Beneficiary - Active",
+        "sub": "Official Member Application Form",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/DesignatedBeneficiary-active.pdf",
+        "tag": "Form"
+    },
+    {
+        "id": 219,
+        "category": "forms",
+        "year": "2025",
+        "title": "Information Sheet",
+        "sub": "Official Member Application Form",
+        "url": "https://www.laredofire.com/LOFULF/LOFDCS/InformationSheetFirefighters.pdf",
+        "tag": "Form"
+    }
+];
+
+        let currentCategory = 'agendas';
+        let currentYear = 'all';
+
+        const categoryTitles = {
+            'agendas': 'AGENDAS AND MINUTES',
+            'financials': 'FINANCIAL AUDITS',
+            'documents': 'SYSTEM DOCUMENTS',
+            'policies': 'SYSTEM POLICIES',
+            'investments': 'INVESTMENT HISTORY',
+            'prb': 'PRB REQUIREMENTS',
+            'legal': 'LEGAL NOTICES & QDROS',
+            'forms': 'MEMBER FORMS'
+        };
+
+        function updateYearFilterBar() {
+            const bar = document.getElementById("yearFilterBar");
+            if (!bar) return;
+
+            const categoryDocs = allDocuments.filter(doc => doc.category === currentCategory);
+            const availableYears = Array.from(new Set(
+                categoryDocs.map(d => d.year).filter(y => y && /^\d{4}$/.test(y))
+            )).sort((a, b) => b - a);
+
+            if (availableYears.length === 0) {
+                bar.style.display = 'none';
+                return;
+            }
+            bar.style.display = 'flex';
+
+            let html = '<span class="year-filter-label">Filter by Year:</span>';
+            html += `<button class="btn-year ${currentYear === 'all' ? 'active' : ''}" onclick="selectYear('all', this)">All Years (${categoryDocs.length})</button>`;
+            
+            availableYears.forEach(y => {
+                const count = categoryDocs.filter(d => d.year === y).length;
+                const isActive = currentYear === y ? 'active' : '';
+                html += `<button class="btn-year ${isActive}" onclick="selectYear('${y}', this)">${y} (${count})</button>`;
+            });
+
+            bar.innerHTML = html;
+        }
+
+        function selectCategory(cat, btn) {
+            currentCategory = cat;
+            currentYear = 'all';
+
+            document.querySelectorAll('.sidebar-btn').forEach(b => b.classList.remove('active'));
+            if (!btn) {
+                btn = document.querySelector(`.sidebar-btn[data-cat="${cat}"]`);
+            }
+            if (btn) btn.classList.add('active');
+
+            const header = document.getElementById('categoryHeader');
+            if (header && categoryTitles[cat]) {
+                header.textContent = categoryTitles[cat];
+            }
+
+            updateYearFilterBar();
+            renderGrid();
+        }
+
+        function selectYear(yr, btn) {
+            currentYear = yr;
+            updateYearFilterBar();
+            renderGrid();
+        }
+
+        function renderGrid() {
+            const grid = document.getElementById("docGrid");
+            const searchInput = document.getElementById("docSearch");
+            const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
+
+            if (!grid) return;
+
+            const categoryDocs = allDocuments.filter(doc => doc.category === currentCategory);
+            const filtered = categoryDocs.filter(doc => {
+                const matchesYear = (currentYear === "all" || doc.year === currentYear);
+                const matchesQuery = (!query || doc.title.toLowerCase().includes(query) || doc.sub.toLowerCase().includes(query) || doc.year.includes(query));
+                return matchesYear && matchesQuery;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '<div style="grid-column: 1 / -1; padding: 40px; text-align: center; color: var(--text-muted); font-size: 0.95rem;">No documents found for this category and year filter.</div>';
+                return;
+            }
+
+            grid.innerHTML = filtered.map(doc => {
+                const isPending = doc.url === "#";
+                const actionText = isPending ? "Pending Upload" : "Download PDF &rarr;";
+                const actionClass = isPending ? "doc-action-tag pending" : "doc-action-tag";
+
+                return `<a href="${doc.url}" ${isPending ? '' : 'target="_blank" rel="noopener noreferrer"'} class="doc-icon-card ${isPending ? 'disabled' : ''}">
+                    <div class="pdf-icon-shape">${doc.tag}</div>
+                    <div class="doc-icon-title">${doc.title}</div>
+                    <div class="doc-icon-sub">${doc.sub} &bull; ${doc.year}</div>
+                    <div class="${actionClass}">${actionText}</div>
+                </a>`;
+            }).join("");
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const catParam = urlParams.get('category');
+            if (catParam && categoryTitles[catParam]) {
+                selectCategory(catParam, null);
+            } else {
+                selectCategory('agendas', null);
+            }
+
+            document.getElementById('mobileToggle')?.addEventListener('click', function() {
+                document.getElementById('mobileDrawer')?.classList.add('open');
+            });
+            document.getElementById('mobileClose')?.addEventListener('click', function() {
+                document.getElementById('mobileDrawer')?.classList.remove('open');
+            });
+        });
+    </script>
+</body>
+</html>
