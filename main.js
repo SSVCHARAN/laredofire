@@ -32,6 +32,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // Ensure menu starts completely closed
+    toggleMenu(false);
+
     if (mobileToggle) {
         mobileToggle.addEventListener('click', function(e) {
             e.stopPropagation();
