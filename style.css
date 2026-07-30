@@ -117,21 +117,22 @@ main { flex-grow: 1; }
 
 /* Mobile Drawer & Backdrop Overlay */
 .mobile-backdrop {
+  display: none;
   position: fixed;
   inset: 0;
   background: rgba(15, 23, 42, 0.6);
   backdrop-filter: blur(4px);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
   z-index: 1999;
 }
 .mobile-backdrop.open {
-  opacity: 1;
-  visibility: visible;
+  display: block;
 }
 
 .mobile-drawer {
+  display: none !important;
+}
+.mobile-drawer.open {
+  display: flex !important;
   position: fixed;
   top: 0;
   right: 0;
@@ -142,19 +143,15 @@ main { flex-grow: 1; }
   z-index: 2000;
   background: #FFFFFF;
   padding: 24px;
-  box-shadow: -8px 0 30px rgba(15, 23, 42, 0.25);
-  transform: translateX(100%);
-  visibility: hidden;
-  pointer-events: none;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease;
-  display: flex;
+  box-shadow: -8px 0 30px rgba(15, 23, 42, 0.3);
   flex-direction: column;
   overflow-y: auto;
+  animation: slideInRight 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.mobile-drawer.open {
-  transform: translateX(0);
-  visibility: visible;
-  pointer-events: auto;
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
 }
 
 .mobile-drawer-header {
