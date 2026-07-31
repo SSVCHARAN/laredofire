@@ -7,17 +7,41 @@
     <meta name="description" content="Official Laredo Firefighters Retirement System Plan Document. Review system rules, benefit calculation formulas, vesting schedules, and eligibility requirements.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-left">
+                <span class="badge-live">NOTICE</span>
+                <span class="top-bar-text">2025 Pre-Retirement Seminar Program Registration Open</span>
+                <a href="https://www.laredofire.com/LOFULF/LOFDCS/LAREDOFIREFIGHTERSPRERETIREMENTSEMINARPROGRAM2025.pdf" target="_blank" rel="noopener noreferrer" class="top-bar-link">Download Guide (PDF &bull; 1.2 MB) &rarr;</a>
+            </div>
+            <div class="top-bar-right">
+                <span class="top-bar-hours">Mon&ndash;Fri: 8:00 AM &ndash; 5:00 PM</span>
+                <a href="tel:956-717-8018" class="contact-pill" aria-label="Call System Office at 956-717-8018">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    956-717-8018
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Header Navigation -->
     <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="brand-logo">
-                <div class="logo-badge">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L3 9v11a2 2 0 0 1-2 2h14a2 2 0 0 1-2-2V9l-9-7z"/><path d="M12 7v7"/><path d="M9 11h6"/></svg>
+                <div class="logo-badge" title="Laredo Firefighters Emblem">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L14.2 6.5L16.8 2.2L16.2 7.8L21.8 7.2L17.5 9.8L22 12L17.5 14.2L21.8 16.8L16.2 16.2L16.8 21.8L14.2 17.5L12 22L9.8 17.5L7.2 21.8L7.8 16.2L2.2 16.8L6.5 14.2L2 12L6.5 9.8L2.2 7.2L7.8 7.8L7.2 2.2L9.8 6.5Z" fill="var(--primary)" stroke="var(--accent)"/>
+                        <circle cx="12" cy="12" r="4.5" fill="#0F172A" stroke="var(--accent)" stroke-width="1.5"/>
+                        <path d="M10.5 13.5L13.5 10.5" stroke="#FFFFFF" stroke-width="1.5"/>
+                        <path d="M10.5 10.5L13.5 13.5" stroke="#FFFFFF" stroke-width="1.5"/>
+                        <circle cx="12" cy="12" r="1" fill="var(--accent)"/>
+                    </svg>
                 </div>
                 <div class="brand-text">
                     <span class="brand-name">LAREDO FIREFIGHTERS</span>
@@ -43,14 +67,15 @@
             </button>
         </div>
     </header>
+
     <!-- Mobile Navigation Drawer -->
-    <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
         <div class="mobile-drawer-header">
             <div class="brand-text">
                 <span class="brand-name">LAREDO FIREFIGHTERS</span>
                 <span class="brand-sub">RETIREMENT SYSTEM</span>
             </div>
-            <button class="mobile-close" id="mobileClose">&times;</button>
+            <button class="mobile-close" id="mobileClose" aria-label="Close Navigation Menu">&times;</button>
         </div>
         <ul class="mobile-nav-list">
             <li><a href="index.html" class="mobile-nav-link">Home</a></li>
@@ -73,16 +98,38 @@
     <!-- Content Section -->
     <main class="home-section">
         <div class="container">
-            <div class="quick-card-clean" style="max-width: 800px; margin: 0 auto;">
-                <h3>Laredo Firefighters Retirement System Plan Document</h3>
-                <p>Clean copy of the system plan rules and provisions as enacted by the Board of Trustees (Revised Jan 22, 2026).</p>
-                <div style="margin: 16px 0; padding: 16px; background: #F8FAFC; border-radius: 8px; border: 1px solid var(--border);">
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;"><strong>File Name:</strong> LaredoJan12023-clean-01222026.pdf</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;"><strong>Format:</strong> Adobe PDF Document (1.4 MB)</p>
+            <div class="quick-card-clean" style="max-width: 840px; margin: 0 auto; padding: 36px; border-radius: 14px; background: #FFFFFF; border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+                    <span style="font-family: var(--font-heading); font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 0.08em;">STATUTORY GOVERNING PLAN DOCUMENT</span>
+                    <span class="pdf-indicator-badge">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        PDF Document &bull; 1.4 MB
+                    </span>
                 </div>
-                <div style="display: flex; gap: 12px; margin-top: 12px;">
-                    <a href="https://www.laredofire.com/LOFULF/LOFDCS/LaredoJan12023-clean-01222026.pdf" target="_blank" class="btn-hero-primary" style="display: inline-block;">Download Plan Document PDF &rarr;</a>
-                    <a href="documents.html" class="btn-doc-download" style="display: inline-block; padding: 12px 20px;">Browse All Documents</a>
+
+                <h3>Laredo Firefighters Retirement System Plan Document</h3>
+                <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+                    Clean official copy of the system plan rules and provisions as enacted by the Board of Trustees (Revised Jan 22, 2026). Governs member retirement eligibility, service credit accrual, disability benefits, and survivor pensions.
+                </p>
+
+                <div style="margin: 20px 0; padding: 20px; background: #F8FAFC; border-radius: 10px; border: 1px solid var(--border); display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+                    <div>
+                        <p style="color: var(--text-muted); margin: 0;"><strong>Official File Name:</strong></p>
+                        <p style="font-weight: 700; color: var(--dark); margin-top: 2px;">LaredoJan12023-clean-01222026.pdf</p>
+                    </div>
+                    <div>
+                        <p style="color: var(--text-muted); margin: 0;"><strong>Last Revision Date:</strong></p>
+                        <p style="font-weight: 700; color: var(--dark); margin-top: 2px;">January 22, 2026</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 14px; margin-top: 24px; flex-wrap: wrap;">
+                    <a href="https://www.laredofire.com/LOFULF/LOFDCS/LaredoJan12023-clean-01222026.pdf" target="_blank" rel="noopener noreferrer" class="btn-hero-primary" style="display: inline-flex; align-items: center; gap: 8px;">
+                        Download Plan Document PDF &rarr;
+                    </a>
+                    <a href="documents.html" class="btn-hero-secondary" style="display: inline-flex; align-items: center; gap: 8px;">
+                        Browse All Public Records
+                    </a>
                 </div>
             </div>
         </div>
@@ -114,7 +161,7 @@
             </div>
             <div class="footer-col">
                 <h5>Office Contact</h5>
-                <p style="font-size: 0.85rem;">5219 Tesoro Plaza Dr.<br>Laredo, TX 78041<br>Phone: 956-717-8018</p>
+                <p style="font-size: 0.85rem;">5219 Tesoro Plaza Dr.<br>Laredo, TX 78041<br>Phone: <a href="tel:956-717-8018" style="color: #94A3B8;">956-717-8018</a></p>
             </div>
         </div>
         <div class="footer-bottom-text">

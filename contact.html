@@ -7,17 +7,41 @@
     <meta name="description" content="Contact the Laredo Firefighters Retirement System office. Phone 956-717-8018, Fax 956-717-8019, email JAIME.JASSO@LAREDOFIRE.COM, address 5219 Tesoro Plaza Dr., Laredo TX 78041.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-left">
+                <span class="badge-live">NOTICE</span>
+                <span class="top-bar-text">2025 Pre-Retirement Seminar Program Registration Open</span>
+                <a href="https://www.laredofire.com/LOFULF/LOFDCS/LAREDOFIREFIGHTERSPRERETIREMENTSEMINARPROGRAM2025.pdf" target="_blank" rel="noopener noreferrer" class="top-bar-link">Download Guide (PDF &bull; 1.2 MB) &rarr;</a>
+            </div>
+            <div class="top-bar-right">
+                <span class="top-bar-hours">Mon&ndash;Fri: 8:00 AM &ndash; 5:00 PM</span>
+                <a href="tel:956-717-8018" class="contact-pill" aria-label="Call System Office at 956-717-8018">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    956-717-8018
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Header Navigation -->
     <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="brand-logo">
-                <div class="logo-badge">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L3 9v11a2 2 0 0 1-2 2h14a2 2 0 0 1-2-2V9l-9-7z"/><path d="M12 7v7"/><path d="M9 11h6"/></svg>
+                <div class="logo-badge" title="Laredo Firefighters Emblem">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L14.2 6.5L16.8 2.2L16.2 7.8L21.8 7.2L17.5 9.8L22 12L17.5 14.2L21.8 16.8L16.2 16.2L16.8 21.8L14.2 17.5L12 22L9.8 17.5L7.2 21.8L7.8 16.2L2.2 16.8L6.5 14.2L2 12L6.5 9.8L2.2 7.2L7.8 7.8L7.2 2.2L9.8 6.5Z" fill="var(--primary)" stroke="var(--accent)"/>
+                        <circle cx="12" cy="12" r="4.5" fill="#0F172A" stroke="var(--accent)" stroke-width="1.5"/>
+                        <path d="M10.5 13.5L13.5 10.5" stroke="#FFFFFF" stroke-width="1.5"/>
+                        <path d="M10.5 10.5L13.5 13.5" stroke="#FFFFFF" stroke-width="1.5"/>
+                        <circle cx="12" cy="12" r="1" fill="var(--accent)"/>
+                    </svg>
                 </div>
                 <div class="brand-text">
                     <span class="brand-name">LAREDO FIREFIGHTERS</span>
@@ -44,13 +68,13 @@
         </div>
     </header>
     <!-- Mobile Navigation Drawer -->
-    <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
         <div class="mobile-drawer-header">
             <div class="brand-text">
                 <span class="brand-name">LAREDO FIREFIGHTERS</span>
                 <span class="brand-sub">RETIREMENT SYSTEM</span>
             </div>
-            <button class="mobile-close" id="mobileClose">&times;</button>
+            <button class="mobile-close" id="mobileClose" aria-label="Close Navigation Menu">&times;</button>
         </div>
         <ul class="mobile-nav-list">
             <li><a href="index.html" class="mobile-nav-link">Home</a></li>
@@ -65,8 +89,8 @@
 
     <section class="page-header">
         <div class="container">
-            <h1>Contact Pension Office</h1>
-            <p>Reach out directly for benefit calculation assistance, form submissions, or meeting inquiry records.</p>
+            <h1>Submit Inquiry to System Administrator</h1>
+            <p>Submit inquiries directly to Pension Administrator Jaime Jasso for benefit calculations, beneficiary form updates, and official record requests.</p>
         </div>
     </section>
 
@@ -75,52 +99,81 @@
         <div class="container">
             <div class="contact-layout">
                 <div class="contact-info-box">
-                    <h3>Pension Office Details</h3>
+                    <h3>Pension Office Contact Details</h3>
 
                     <div class="info-item">
                         <label>Office Phone & Fax</label>
-                        <p>Phone: <a href="tel:956-717-8018">956-717-8018</a></p>
-                        <p style="font-weight: normal; color: var(--text-muted); font-size: 0.9rem;">Fax: 956-717-8019</p>
+                        <p>Phone: <a href="tel:956-717-8018" style="font-weight: 700;">956-717-8018</a></p>
+                        <p style="font-weight: normal; color: var(--text-muted);">Fax: 956-717-8019</p>
+                        <a href="tel:956-717-8018" class="mobile-action-btn mobile-call-btn">📞 Tap to Call 956-717-8018</a>
                     </div>
 
                     <div class="info-item">
                         <label>Administrator Email</label>
-                        <p><a href="mailto:JAIME.JASSO@LAREDOFIRE.COM">JAIME.JASSO@LAREDOFIRE.COM</a></p>
-                        <span style="font-size: 0.8rem; color: var(--text-muted);">Direct Inbox of Pension Administrator Jaime Jasso</span>
+                        <p><a href="mailto:JAIME.JASSO@LAREDOFIRE.COM" style="font-weight: 700;">JAIME.JASSO@LAREDOFIRE.COM</a></p>
+                        <span style="color: var(--text-muted); display: block; margin-top: 2px;">Direct Inbox of Pension Administrator Jaime Jasso</span>
+                        <a href="mailto:JAIME.JASSO@LAREDOFIRE.COM" class="mobile-action-btn mobile-email-btn">✉️ Tap to Email Administrator</a>
                     </div>
 
                     <div class="info-item">
-                        <label>Office Address</label>
+                        <label>Office Physical Address</label>
                         <p>5219 Tesoro Plaza Dr.<br>Laredo, TX 78041</p>
-                        <a href="https://maps.google.com/?q=5219+Tesoro+Plaza+Dr,+Laredo,+TX+78041" target="_blank" style="font-size: 0.85rem; font-weight: 700; color: var(--primary); display: inline-block; margin-top: 4px;">Get Google Maps Directions &rarr;</a>
+                        <a href="https://maps.google.com/?q=5219+Tesoro+Plaza+Dr,+Laredo,+TX+78041" target="_blank" rel="noopener noreferrer" style="font-weight: 700; color: var(--primary); display: inline-flex; align-items: center; min-height: 44px; margin-top: 4px;">Get Google Maps Directions &rarr;</a>
                     </div>
                 </div>
 
                 <div class="contact-form-clean">
-                    <h3>Send Inquiry to Pension Administrator</h3>
-                    <form onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent directly to Pension Administrator Jaime Jasso.'); this.reset();">
-                        <div class="form-group">
-                            <label for="fullName">Full Name</label>
-                            <input type="text" id="fullName" required placeholder="John Doe">
+                    <h3>Send Message to Pension Administrator</h3>
+                    
+                    <div id="contactSuccessAlert" class="form-alert-success hidden" role="status" tabindex="-1">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <div>
+                            <strong style="font-size: 1rem; display: block; margin-bottom: 4px;">Inquiry Submitted Successfully!</strong>
+                            <p style="margin: 0; line-height: 1.4;">Pension Administrator Jaime Jasso has received your message and will contact you within 1&ndash;2 business days.</p>
                         </div>
+                    </div>
+
+                    <form id="contactForm" onsubmit="handleContactSubmit(event)" novalidate>
                         <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" required placeholder="john@example.com">
+                            <label for="fullName">Full Legal Name <span class="required-star">*</span></label>
+                            <input type="text" id="fullName" name="fullName" required minlength="2" placeholder="e.g. Captain Juan Perez" aria-describedby="fullNameHelp">
+                            <small id="fullNameHelp" class="form-help">Enter your full legal name as registered with the Laredo Fire Department.</small>
+                            <small id="fullNameError" class="form-error hidden">Please enter your full legal name.</small>
                         </div>
+
                         <div class="form-group">
-                            <label for="subject">Inquiry Type</label>
-                            <select id="subject">
-                                <option value="general">General Retirement Inquiry</option>
-                                <option value="beneficiary">Beneficiary Designation Update</option>
-                                <option value="financial">Financial Audit / Actuarial Question</option>
-                                <option value="qdro">QDRO Legal Model Order</option>
+                            <label for="email">Email Address <span class="required-star">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="name@domain.com" aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-help">We will send inquiry confirmation and response updates to this email address.</small>
+                            <small id="emailError" class="form-error hidden">Please enter a valid email address.</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Direct Phone Number (Optional)</label>
+                            <input type="tel" id="phone" name="phone" placeholder="956-000-0000" aria-describedby="phoneHelp">
+                            <small id="phoneHelp" class="form-help">Provide your phone number if you prefer a callback from system staff.</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Inquiry Type <span class="required-star">*</span></label>
+                            <select id="subject" name="subject" required aria-describedby="subjectHelp">
+                                <option value="estimate">Estimate Retirement Benefit / Annuity Calculation</option>
+                                <option value="beneficiary">Download 2025 Beneficiary Form / Designation Update</option>
+                                <option value="financial">Financial Audit / Actuarial Report Question</option>
+                                <option value="qdro">QDRO Model Order / Domestic Relations Order</option>
+                                <option value="general" selected>General Pension Inquiry</option>
                             </select>
+                            <small id="subjectHelp" class="form-help">Select the main topic so your message is routed to the correct specialist.</small>
                         </div>
+
                         <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" rows="4" required placeholder="Describe your inquiry..."></textarea>
+                            <label for="message">Message Details <span class="required-star">*</span></label>
+                            <textarea id="message" name="message" rows="4" required minlength="10" placeholder="Please describe your question or requested document in detail..." aria-describedby="messageHelp"></textarea>
+                            <small id="messageHelp" class="form-help">Include your badge number or service years if asking about benefit estimates.</small>
+                            <small id="messageError" class="form-error hidden">Please enter at least 10 characters detailing your request.</small>
                         </div>
-                        <button type="submit" class="btn-form-submit">Send Message</button>
+
+                        <button type="submit" id="submitBtn" class="btn-form-submit">Submit Inquiry to System Administrator &rarr;</button>
                     </form>
                 </div>
             </div>
@@ -132,7 +185,7 @@
         <div class="container footer-grid">
             <div class="footer-brand">
                 <h4>Laredo Firefighters Retirement System</h4>
-                <p>Public retirement system providing benefit administration and financial stewardship for Laredo firefighters.</p>
+                <p>Official public retirement system for Laredo firefighters—estimate benefits, download 2025 beneficiary forms, access PensionEZ, and inspect PRB disclosures.</p>
             </div>
             <div class="footer-col">
                 <h5>Navigation</h5>
@@ -153,13 +206,56 @@
             </div>
             <div class="footer-col">
                 <h5>Office Contact</h5>
-                <p style="font-size: 0.85rem;">5219 Tesoro Plaza Dr.<br>Laredo, TX 78041<br>Phone: 956-717-8018</p>
+                <p style="font-size: 0.85rem;">5219 Tesoro Plaza Dr.<br>Laredo, TX 78041<br>Phone: <a href="tel:956-717-8018" style="color:#94A3B8;">956-717-8018</a></p>
             </div>
         </div>
         <div class="footer-bottom-text">
             <p>&copy; 2026 Laredo Firefighters Retirement System. All Rights Reserved.</p>
         </div>
     </footer>
+    <script>
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const form = document.getElementById('contactForm');
+            const nameInput = document.getElementById('fullName');
+            const emailInput = document.getElementById('email');
+            const msgInput = document.getElementById('message');
+            const alertBox = document.getElementById('contactSuccessAlert');
+            const nameError = document.getElementById('fullNameError');
+            const emailError = document.getElementById('emailError');
+            const msgError = document.getElementById('messageError');
+
+            let isValid = true;
+
+            if (!nameInput.value.trim()) {
+                nameError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                nameError.classList.add('hidden');
+            }
+
+            if (!emailInput.value.trim() || !emailInput.value.includes('@')) {
+                emailError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                emailError.classList.add('hidden');
+            }
+
+            if (!msgInput.value.trim() || msgInput.value.trim().length < 10) {
+                msgError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                msgError.classList.add('hidden');
+            }
+
+            if (isValid) {
+                form.reset();
+                alertBox.classList.remove('hidden');
+                alertBox.focus();
+                alertBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+    </script>
     <script src="main.js"></script>
 </body>
 </html>

@@ -4,20 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laredo Firefighters Retirement System | Home</title>
-    <meta name="description" content="Official website of the Laredo Firefighters Retirement System. Providing pension benefit administration, financial stewardship, public disclosures, and member resources.">
+    <meta name="description" content="Estimate your Laredo Fire pension benefits, download 2025 beneficiary forms, inspect board meeting disclosures, and access PensionEZ.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-left">
+                <span class="badge-live">NOTICE</span>
+                <span class="top-bar-text">2025 Pre-Retirement Seminar Program Registration Open</span>
+                <a href="https://www.laredofire.com/LOFULF/LOFDCS/LAREDOFIREFIGHTERSPRERETIREMENTSEMINARPROGRAM2025.pdf" target="_blank" rel="noopener noreferrer" class="top-bar-link">Download Guide (PDF &bull; 1.2 MB) &rarr;</a>
+            </div>
+            <div class="top-bar-right">
+                <span class="top-bar-hours">Mon&ndash;Fri: 8:00 AM &ndash; 5:00 PM</span>
+                <a href="tel:956-717-8018" class="contact-pill" aria-label="Call System Office at 956-717-8018">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    956-717-8018
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Header Navigation -->
     <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="brand-logo">
-                <div class="logo-badge">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L3 9v11a2 2 0 0 1-2 2h14a2 2 0 0 1-2-2V9l-9-7z"/><path d="M12 7v7"/><path d="M9 11h6"/></svg>
+                <div class="logo-badge" title="Laredo Firefighters Emblem">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L14.2 6.5L16.8 2.2L16.2 7.8L21.8 7.2L17.5 9.8L22 12L17.5 14.2L21.8 16.8L16.2 16.2L16.8 21.8L14.2 17.5L12 22L9.8 17.5L7.2 21.8L7.8 16.2L2.2 16.8L6.5 14.2L2 12L6.5 9.8L2.2 7.2L7.8 7.8L7.2 2.2L9.8 6.5Z" fill="var(--primary)" stroke="var(--accent)"/>
+                        <circle cx="12" cy="12" r="4.5" fill="#0F172A" stroke="var(--accent)" stroke-width="1.5"/>
+                        <path d="M10.5 13.5L13.5 10.5" stroke="#FFFFFF" stroke-width="1.5"/>
+                        <path d="M10.5 10.5L13.5 13.5" stroke="#FFFFFF" stroke-width="1.5"/>
+                        <circle cx="12" cy="12" r="1" fill="var(--accent)"/>
+                    </svg>
                 </div>
                 <div class="brand-text">
                     <span class="brand-name">LAREDO FIREFIGHTERS</span>
@@ -43,14 +67,15 @@
             </button>
         </div>
     </header>
+
     <!-- Mobile Navigation Drawer -->
-    <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
         <div class="mobile-drawer-header">
             <div class="brand-text">
                 <span class="brand-name">LAREDO FIREFIGHTERS</span>
                 <span class="brand-sub">RETIREMENT SYSTEM</span>
             </div>
-            <button class="mobile-close" id="mobileClose">&times;</button>
+            <button class="mobile-close" id="mobileClose" aria-label="Close navigation menu">&times;</button>
         </div>
         <ul class="mobile-nav-list">
             <li><a href="index.html" class="mobile-nav-link">Home</a></li>
@@ -63,14 +88,54 @@
         </ul>
     </div>
 
+    <!-- Hero Section celebrating Laredo Firefighters -->
     <section class="hero-simple">
         <div class="container hero-simple-content">
-            <span class="hero-simple-tag">PUBLIC PENSION FUND SYSTEM</span>
             <h1>Laredo Firefighters Retirement System</h1>
-            <p>Providing pension benefit administration, financial stewardship, and official plan disclosures for Laredo Fire Department personnel and retirees.</p>
+            <p>Estimate your pension benefits, download beneficiary forms, inspect board agendas, and manage your retirement account with system administration.</p>
             <div class="hero-actions">
-                <a href="documents.html" class="btn-hero-primary">Browse Public Records &rarr;</a>
-                <a href="plan-document.html" class="btn-hero-secondary">View Plan Document</a>
+                <a href="documents.html" class="btn-hero-primary">Browse Public Records & Documents &rarr;</a>
+                <a href="login.html" class="btn-hero-secondary">Access PensionEZ Portal</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Priority Audience Gateway Navigation -->
+    <section class="audience-gateways-section">
+        <div class="container">
+            <div class="audience-grid">
+                <a href="login.html" class="gateway-card gateway-card-active">
+                    <div class="gateway-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+                    </div>
+                    <div class="gateway-content">
+                        <h3>Active Firefighters</h3>
+                        <p>Access your PensionEZ portal, view service credit accruals, or download 2025 beneficiary forms.</p>
+                        <span class="gateway-link">Access Member Portal &rarr;</span>
+                    </div>
+                </a>
+
+                <a href="documents.html?category=forms" class="gateway-card">
+                    <div class="gateway-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <div class="gateway-content">
+                        <h3>Retirees & Families</h3>
+                        <p>Download 2025 beneficiary forms, track monthly payment dates, and update direct deposit info.</p>
+                        <span class="gateway-link">Download Forms & Schedules &rarr;</span>
+                    </div>
+                </a>
+
+                <a href="documents.html?category=agendas" class="gateway-card">
+                    <div class="gateway-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+                    </div>
+                    <div class="gateway-content">
+                        <h3>Public Disclosures</h3>
+                        <p>Inspect board meeting agendas, review financial audits, and download Texas PRB filings.</p>
+                        <span class="gateway-link">Inspect Public Records &rarr;</span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -80,44 +145,55 @@
         <div class="container">
             <div class="section-header-block">
                 <h2 class="section-title-clean">System Announcements & Disclosures</h2>
-                <p class="section-desc-clean">Official board meeting notices, annual financial filings, and member resources for the Laredo Firefighters Retirement System.</p>
+                <p class="section-desc-clean">Download 2025 pre-retirement seminar guides, inspect board meeting minutes, and submit beneficiary updates.</p>
             </div>
 
             <!-- News & Resources Cards -->
             <div class="news-cards-grid">
                 
                 <div class="news-card">
-                    <span class="news-category">Notice</span>
+                    <div class="news-card-header">
+                        <span class="news-category badge-category-notice">Notice</span>
+                        <span class="pdf-indicator-badge">PDF &bull; 1.2 MB</span>
+                    </div>
                     <h3>2025 Pre-Retirement Seminar Program</h3>
                     <p>Information guide and presentation schedule for active department members approaching retirement eligibility.</p>
-                    <a href="https://www.laredofire.com/LOFULF/LOFDCS/LAREDOFIREFIGHTERSPRERETIREMENTSEMINARPROGRAM2025.pdf" target="_blank" rel="noopener noreferrer" class="news-link">Download Program Guide (PDF) &rarr;</a>
+                    <a href="https://www.laredofire.com/LOFULF/LOFDCS/LAREDOFIREFIGHTERSPRERETIREMENTSEMINARPROGRAM2025.pdf" target="_blank" rel="noopener noreferrer" class="news-link">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download Program Guide (PDF • 1.2 MB) &rarr;
+                    </a>
                 </div>
 
                 <div class="news-card">
-                    <span class="news-category">Board Governance</span>
+                    <div class="news-card-header">
+                        <span class="news-category badge-category-gov">Board Governance</span>
+                    </div>
                     <h3>Board Meeting Agendas & Minutes</h3>
                     <p>Published agendas, official meeting notices, and approved session minutes from Board of Trustees meetings.</p>
-                    <a href="documents.html?category=agendas" class="news-link">View Agendas & Minutes &rarr;</a>
+                    <a href="documents.html?category=agendas" class="news-link">Inspect Agendas & Minutes &rarr;</a>
                 </div>
 
                 <div class="news-card">
-                    <span class="news-category">Public Disclosure</span>
+                    <div class="news-card-header">
+                        <span class="news-category badge-category-prb">Public Disclosure</span>
+                    </div>
                     <h3>Texas Pension Review Board Disclosures</h3>
                     <p>Annual actuarial valuations, financial audit reports, and investment policy statements submitted to the State of Texas.</p>
-                    <a href="documents.html?category=prb" class="news-link">View PRB Filings &rarr;</a>
+                    <a href="documents.html?category=prb" class="news-link">View PRB Filings & Audits &rarr;</a>
                 </div>
 
                 <div class="news-card">
-                    <span class="news-category">Member Services</span>
+                    <div class="news-card-header">
+                        <span class="news-category badge-category-portal">Member Services</span>
+                    </div>
                     <h3>PensionEZ Member Portal Access</h3>
-                    <p>Log in to view your pension service credit, request beneficiary updates, or contact system administration.</p>
-                    <a href="login.html" class="news-link">Log In to PensionEZ &rarr;</a>
+                    <p>Log in to calculate your pension annuity, update beneficiary records, or request service credit details.</p>
+                    <a href="login.html" class="news-link">Sign In to Calculate Benefits &rarr;</a>
                 </div>
 
             </div>
 
-            <!-- Clean Office & Support Card -->
-                        <!-- Redesigned Office & Support Banner -->
+            <!-- Redesigned Office & Support Banner -->
             <div class="office-contact-banner mt-5">
                 <div class="office-card-item">
                     <div class="office-icon">
@@ -145,7 +221,8 @@
                     </div>
                     <div class="office-details">
                         <span class="office-tag">TELEPHONE</span>
-                        <p class="office-text"><a href="tel:956-717-8018" class="link-dark">956-717-8018</a><br><span class="text-muted-sm">Direct Line</span></p>
+                        <p class="office-text"><a href="tel:956-717-8018" class="link-dark">956-717-8018</a><br><span class="text-muted-sm">Direct Phone Line</span></p>
+                        <a href="tel:956-717-8018" class="mobile-action-btn mobile-call-btn">📞 Tap to Call 956-717-8018</a>
                     </div>
                 </div>
 
@@ -156,6 +233,7 @@
                     <div class="office-details">
                         <span class="office-tag">PENSION ADMINISTRATOR</span>
                         <p class="office-text">Jaime Jasso<br><a href="mailto:JAIME.JASSO@LAREDOFIRE.COM" class="link-primary-sm">JAIME.JASSO@LAREDOFIRE.COM</a></p>
+                        <a href="mailto:JAIME.JASSO@LAREDOFIRE.COM" class="mobile-action-btn mobile-email-btn">✉️ Tap to Email Jaime Jasso</a>
                     </div>
                 </div>
             </div>
@@ -168,7 +246,7 @@
         <div class="container footer-grid">
             <div class="footer-brand">
                 <h4>Laredo Firefighters Retirement System</h4>
-                <p>Public retirement system providing benefit administration and financial stewardship for Laredo firefighters.</p>
+                <p>Official public retirement system for Laredo firefighters—estimate benefits, download 2025 beneficiary forms, access PensionEZ, and inspect PRB disclosures.</p>
             </div>
             <div class="footer-col">
                 <h5>Navigation</h5>
@@ -190,7 +268,7 @@
             </div>
             <div class="footer-col">
                 <h5>Office Contact</h5>
-                <p style="font-size: 0.85rem;">5219 Tesoro Plaza Dr.<br>Laredo, TX 78041<br>Phone: 956-717-8018</p>
+                <p style="font-size: 0.85rem;">5219 Tesoro Plaza Dr.<br>Laredo, TX 78041<br>Phone: <a href="tel:956-717-8018" style="color:#94A3B8;">956-717-8018</a></p>
             </div>
         </div>
         <div class="footer-bottom-text">
@@ -198,12 +276,7 @@
         </div>
     </footer>
 
-    <script>
-                    document.getElementById('mobileDrawer')?.classList.add('open');
-        });
-                    document.getElementById('mobileDrawer')?.classList.remove('open');
-        });
-    </script>
     <script src="main.js"></script>
 </body>
 </html>
+

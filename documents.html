@@ -7,7 +7,7 @@
     <meta name="description" content="Searchable public document repository of the Laredo Firefighters Retirement System. Agendas, financial audits, investment performance, policies, PRB requirements, legal QDROs, and forms.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
         .year-filter-bar {
@@ -23,7 +23,7 @@
         }
         .year-filter-label {
             font-family: var(--font-heading);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 800;
             color: var(--text-muted);
             text-transform: uppercase;
@@ -35,7 +35,7 @@
             border: 1px solid var(--border);
             color: #334155;
             font-family: var(--font-heading);
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             font-weight: 700;
             padding: 4px 12px;
             border-radius: 6px;
@@ -47,16 +47,62 @@
             color: #FFFFFF;
             border-color: var(--primary);
         }
+        mark.search-highlight {
+            background-color: rgba(254, 240, 138, 0.9);
+            color: #0F172A;
+            font-weight: 700;
+            padding: 1px 3px;
+            border-radius: 3px;
+        }
+        .btn-search-suggestion {
+            background: transparent;
+            border: none;
+            color: var(--primary);
+            font-family: inherit;
+            font-size: inherit;
+            font-weight: 700;
+            text-decoration: underline;
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+        }
+        .btn-search-suggestion:hover {
+            color: var(--primary-dark);
+        }
     </style>
 </head>
 <body>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-left">
+                <span class="badge-live">NOTICE</span>
+                <span class="top-bar-text">2025 Pre-Retirement Seminar Program Registration Open</span>
+                <a href="https://www.laredofire.com/LOFULF/LOFDCS/LAREDOFIREFIGHTERSPRERETIREMENTSEMINARPROGRAM2025.pdf" target="_blank" rel="noopener noreferrer" class="top-bar-link">Download Guide (PDF &bull; 1.2 MB) &rarr;</a>
+            </div>
+            <div class="top-bar-right">
+                <span class="top-bar-hours">Mon&ndash;Fri: 8:00 AM &ndash; 5:00 PM</span>
+                <a href="tel:956-717-8018" class="contact-pill" aria-label="Call System Office at 956-717-8018">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    956-717-8018
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Header Navigation -->
     <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="brand-logo">
-                <div class="logo-badge">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L3 9v11a2 2 0 0 1-2 2h14a2 2 0 0 1-2-2V9l-9-7z"/><path d="M12 7v7"/><path d="M9 11h6"/></svg>
+                <div class="logo-badge" title="Laredo Firefighters Emblem">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L14.2 6.5L16.8 2.2L16.2 7.8L21.8 7.2L17.5 9.8L22 12L17.5 14.2L21.8 16.8L16.2 16.2L16.8 21.8L14.2 17.5L12 22L9.8 17.5L7.2 21.8L7.8 16.2L2.2 16.8L6.5 14.2L2 12L6.5 9.8L2.2 7.2L7.8 7.8L7.2 2.2L9.8 6.5Z" fill="var(--primary)" stroke="var(--accent)"/>
+                        <circle cx="12" cy="12" r="4.5" fill="#0F172A" stroke="var(--accent)" stroke-width="1.5"/>
+                        <path d="M10.5 13.5L13.5 10.5" stroke="#FFFFFF" stroke-width="1.5"/>
+                        <path d="M10.5 10.5L13.5 13.5" stroke="#FFFFFF" stroke-width="1.5"/>
+                        <circle cx="12" cy="12" r="1" fill="var(--accent)"/>
+                    </svg>
                 </div>
                 <div class="brand-text">
                     <span class="brand-name">LAREDO FIREFIGHTERS</span>
@@ -83,13 +129,13 @@
         </div>
     </header>
     <!-- Mobile Navigation Drawer -->
-    <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
         <div class="mobile-drawer-header">
             <div class="brand-text">
                 <span class="brand-name">LAREDO FIREFIGHTERS</span>
                 <span class="brand-sub">RETIREMENT SYSTEM</span>
             </div>
-            <button class="mobile-close" id="mobileClose">&times;</button>
+            <button class="mobile-close" id="mobileClose" aria-label="Close Navigation Menu">&times;</button>
         </div>
         <ul class="mobile-nav-list">
             <li><a href="index.html" class="mobile-nav-link">Home</a></li>
@@ -105,7 +151,7 @@
     <section class="page-header">
         <div class="container">
             <h1>Public Records Repository (219 Official Documents)</h1>
-            <p>Select a category from the left menu or filter by year to view official system records.</p>
+            <p>Filter by category or search by year to view official system records and public disclosures.</p>
         </div>
     </section>
 
@@ -117,26 +163,57 @@
             <aside class="doc-sidebar">
                 <div class="sidebar-title">Document Categories</div>
                 <ul class="sidebar-menu">
-                    <li><button class="sidebar-btn active" data-cat="agendas" onclick="selectCategory('agendas', this)">AGENDAS AND MINUTES</button></li>
-                    <li><button class="sidebar-btn" data-cat="financials" onclick="selectCategory('financials', this)">FINANCIAL</button></li>
-                    <li><button class="sidebar-btn" data-cat="documents" onclick="selectCategory('documents', this)">DOCUMENTS</button></li>
-                    <li><button class="sidebar-btn" data-cat="policies" onclick="selectCategory('policies', this)">POLICIES</button></li>
-                    <li><button class="sidebar-btn" data-cat="investments" onclick="selectCategory('investments', this)">INVESTMENT HISTORY</button></li>
-                    <li><button class="sidebar-btn" data-cat="prb" onclick="selectCategory('prb', this)">PRB REQUIREMENTS</button></li>
-                    <li><button class="sidebar-btn" data-cat="legal" onclick="selectCategory('legal', this)">LEGAL</button></li>
-                    <li><button class="sidebar-btn" data-cat="forms" onclick="selectCategory('forms', this)">FORMS</button></li>
+                    <li><button class="sidebar-btn active" data-cat="agendas" onclick="selectCategory('agendas', this)">AGENDAS & MINUTES <span class="cat-count-badge" id="badge-agendas">112</span></button></li>
+                    <li><button class="sidebar-btn" data-cat="financials" onclick="selectCategory('financials', this)">FINANCIAL AUDITS <span class="cat-count-badge" id="badge-financials">6</span></button></li>
+                    <li><button class="sidebar-btn" data-cat="legal" onclick="selectCategory('legal', this)">LEGAL & QDRO <span class="cat-count-badge" id="badge-legal">3</span></button></li>
+                    <li><button class="sidebar-btn" data-cat="forms" onclick="selectCategory('forms', this)">MEMBER FORMS <span class="cat-count-badge" id="badge-forms">2</span></button></li>
+                    <li><button class="sidebar-btn" data-cat="documents" onclick="selectCategory('documents', this)">SYSTEM DOCUMENTS <span class="cat-count-badge" id="badge-documents">6</span></button></li>
+                    <li><button class="sidebar-btn" data-cat="policies" onclick="selectCategory('policies', this)">POLICIES <span class="cat-count-badge" id="badge-policies">7</span></button></li>
+                    <li><button class="sidebar-btn" data-cat="investments" onclick="selectCategory('investments', this)">INVESTMENT HISTORY <span class="cat-count-badge" id="badge-investments">18</span></button></li>
+                    <li><button class="sidebar-btn" data-cat="prb" onclick="selectCategory('prb', this)">PRB REQUIREMENTS <span class="cat-count-badge" id="badge-prb">15</span></button></li>
                 </ul>
             </aside>
 
             <!-- Right Main Content Area -->
             <section class="doc-main-content">
+
+                <!-- Horizontal Category Quick-Pill Bar for Instant Category Filtering -->
+                <div class="category-quick-pills" id="categoryQuickPills">
+                    <button class="pill-tab active" data-cat="agendas" onclick="selectCategory('agendas', this)">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        Agendas & Minutes <span class="pill-count" id="pillCount-agendas">112</span>
+                    </button>
+                    <button class="pill-tab" data-cat="financials" onclick="selectCategory('financials', this)">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                        Financial Audits <span class="pill-count" id="pillCount-financials">6</span>
+                    </button>
+                    <button class="pill-tab" data-cat="legal" onclick="selectCategory('legal', this)">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        Legal & QDRO <span class="pill-count" id="pillCount-legal">3</span>
+                    </button>
+                    <button class="pill-tab" data-cat="forms" onclick="selectCategory('forms', this)">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+                        Member Forms <span class="pill-count" id="pillCount-forms">2</span>
+                    </button>
+                    <button class="pill-tab" data-cat="investments" onclick="selectCategory('investments', this)">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                        Investments <span class="pill-count" id="pillCount-investments">18</span>
+                    </button>
+                    <button class="pill-tab" data-cat="prb" onclick="selectCategory('prb', this)">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        PRB Requirements <span class="pill-count" id="pillCount-prb">15</span>
+                    </button>
+                </div>
+
                 <div class="doc-content-header">
                     <div>
-                        <h2 class="doc-content-title" id="categoryHeader">Investment History</h2>
+                        <h2 class="doc-content-title" id="categoryHeader">AGENDAS AND MINUTES</h2>
                     </div>
-                    <div class="search-box-clean">
+                    <div class="search-box-clean" role="search">
+                        <label for="docSearch" class="sr-only">Search public records and documents</label>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                        <input type="text" id="docSearch" placeholder="Search category documents..." oninput="renderGrid()">
+                        <input type="text" id="docSearch" placeholder="Search documents (e.g. 2025, Beneficiary Form, Audit)..." aria-label="Search public records and documents" oninput="renderGrid()">
+                        <button type="button" id="clearSearch" class="search-clear-btn" aria-label="Clear document search" onclick="clearDocumentSearch()">&times;</button>
                     </div>
                 </div>
 
@@ -145,6 +222,9 @@
                     <span class="year-filter-label">Filter by Year:</span>
                     <button class="btn-year active" onclick="selectYear('all', this)">All Years</button>
                 </div>
+
+                <!-- Result Counter -->
+                <div id="searchCount" class="search-count-badge" aria-live="polite"></div>
 
                 <!-- Dynamic Document Icon Grid -->
                 <div class="doc-icon-grid" id="docGrid"></div>
@@ -2204,19 +2284,48 @@
             bar.innerHTML = html;
         }
 
+        function updateCategoryCounts() {
+            Object.keys(categoryTitles).forEach(cat => {
+                const count = allDocuments.filter(doc => doc.category === cat).length;
+                const sidebarBadge = document.getElementById(`badge-${cat}`);
+                if (sidebarBadge) sidebarBadge.textContent = count;
+                const pillBadge = document.getElementById(`pillCount-${cat}`);
+                if (pillBadge) pillBadge.textContent = count;
+            });
+        }
+
         function selectCategory(cat, btn) {
             currentCategory = cat;
             currentYear = 'all';
 
-            document.querySelectorAll('.sidebar-btn').forEach(b => b.classList.remove('active'));
-            if (!btn) {
-                btn = document.querySelector(`.sidebar-btn[data-cat="${cat}"]`);
-            }
-            if (btn) btn.classList.add('active');
+            // Sync Sidebar buttons
+            document.querySelectorAll('.sidebar-btn').forEach(b => {
+                if (b.getAttribute('data-cat') === cat) {
+                    b.classList.add('active');
+                } else {
+                    b.classList.remove('active');
+                }
+            });
 
+            // Sync Horizontal Quick-Pills
+            document.querySelectorAll('.pill-tab').forEach(p => {
+                if (p.getAttribute('data-cat') === cat) {
+                    p.classList.add('active');
+                } else {
+                    p.classList.remove('active');
+                }
+            });
+
+            const categoryDocs = allDocuments.filter(doc => doc.category === cat);
             const header = document.getElementById('categoryHeader');
             if (header && categoryTitles[cat]) {
-                header.textContent = categoryTitles[cat];
+                header.textContent = `${categoryTitles[cat]} (${categoryDocs.length})`;
+            }
+
+            // Sync URL parameter silently
+            if (window.history.replaceState) {
+                const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?category=' + cat;
+                window.history.replaceState({path: newUrl}, '', newUrl);
             }
 
             updateYearFilterBar();
@@ -2229,22 +2338,92 @@
             renderGrid();
         }
 
+        function escapeHTML(str) {
+            if (!str) return '';
+            return str.replace(/[&<>"']/g, function(m) {
+                return {
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    '"': '&quot;',
+                    "'": '&#039;'
+                }[m];
+            });
+        }
+
+        function highlightKeyword(text, query) {
+            if (!query || !query.trim()) return escapeHTML(text);
+            const trimmedQuery = query.trim();
+            const escapedQuery = trimmedQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const parts = text.split(new RegExp(`(${escapedQuery})`, 'gi'));
+            return parts.map(part => {
+                if (part.toLowerCase() === trimmedQuery.toLowerCase()) {
+                    return `<mark class="search-highlight">${escapeHTML(part)}</mark>`;
+                }
+                return escapeHTML(part);
+            }).join('');
+        }
+
+        function setSearchQuery(q) {
+            const input = document.getElementById("docSearch");
+            if (input) {
+                input.value = q;
+                input.focus();
+                renderGrid();
+            }
+        }
+
+        function clearDocumentSearch() {
+            const input = document.getElementById("docSearch");
+            if (input) {
+                input.value = "";
+                input.focus();
+                renderGrid();
+            }
+        }
+
         function renderGrid() {
             const grid = document.getElementById("docGrid");
             const searchInput = document.getElementById("docSearch");
-            const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
+            const countBadge = document.getElementById("searchCount");
+            const clearBtn = document.getElementById("clearSearch");
+            const rawQuery = searchInput ? searchInput.value : "";
+            const query = rawQuery.trim();
+            const lowerQuery = query.toLowerCase();
 
             if (!grid) return;
+
+            if (clearBtn) {
+                clearBtn.style.display = query ? "flex" : "none";
+            }
 
             const categoryDocs = allDocuments.filter(doc => doc.category === currentCategory);
             const filtered = categoryDocs.filter(doc => {
                 const matchesYear = (currentYear === "all" || doc.year === currentYear);
-                const matchesQuery = (!query || doc.title.toLowerCase().includes(query) || doc.sub.toLowerCase().includes(query) || doc.year.includes(query));
+                const matchesQuery = (!lowerQuery || doc.title.toLowerCase().includes(lowerQuery) || doc.sub.toLowerCase().includes(lowerQuery) || doc.year.includes(lowerQuery));
                 return matchesYear && matchesQuery;
             });
 
+            if (countBadge) {
+                if (query) {
+                    countBadge.textContent = `Showing ${filtered.length} of ${categoryDocs.length} documents matching "${query}"`;
+                } else if (currentYear !== 'all') {
+                    countBadge.textContent = `Showing ${filtered.length} documents for ${currentYear}`;
+                } else {
+                    countBadge.textContent = `Showing all ${filtered.length} documents in this category`;
+                }
+            }
+
             if (filtered.length === 0) {
-                grid.innerHTML = '<div style="grid-column: 1 / -1; padding: 40px; text-align: center; color: var(--text-muted); font-size: 0.95rem;">No documents found for this category and year filter.</div>';
+                const displayQuery = query ? escapeHTML(query) : (currentYear !== 'all' ? escapeHTML(currentYear) : '');
+                grid.innerHTML = `<div class="zero-results-card" style="grid-column: 1 / -1; padding: 48px 24px; text-align: center; background: #FFFFFF; border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);">
+                    <div style="font-size: 2.5rem; margin-bottom: 12px;">🔍</div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--dark); margin-bottom: 10px;">No Documents Found</h3>
+                    <p style="color: var(--text-muted); font-size: 0.98rem; margin-bottom: 20px; max-width: 580px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                        No documents found matching '${displayQuery}'. Try searching for '<button type="button" class="btn-search-suggestion" onclick="setSearchQuery('agendas')">agendas</button>', '<button type="button" class="btn-search-suggestion" onclick="setSearchQuery('2025')">2025</button>', or '<button type="button" class="btn-search-suggestion" onclick="setSearchQuery('audit')">audit</button>'.
+                    </p>
+                    <button type="button" class="btn-primary" style="padding: 10px 22px; font-weight: 700;" onclick="clearDocumentSearch()">Clear Search</button>
+                </div>`;
                 return;
             }
 
@@ -2252,10 +2431,11 @@
                 const isPending = doc.url === "#";
                 const actionText = isPending ? "Pending Upload" : "Download PDF &rarr;";
                 const actionClass = isPending ? "doc-action-tag pending" : "doc-action-tag";
+                const highlightedTitle = highlightKeyword(doc.title, query);
 
                 return `<a href="${doc.url}" ${isPending ? '' : 'target="_blank" rel="noopener noreferrer"'} class="doc-icon-card ${isPending ? 'disabled' : ''}">
                     <div class="pdf-icon-shape">${doc.tag}</div>
-                    <div class="doc-icon-title">${doc.title}</div>
+                    <div class="doc-icon-title">${highlightedTitle}</div>
                     <div class="doc-icon-sub">${doc.sub} &bull; ${doc.year}</div>
                     <div class="${actionClass}">${actionText}</div>
                 </a>`;
@@ -2263,6 +2443,7 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
+            updateCategoryCounts();
             const urlParams = new URLSearchParams(window.location.search);
             const catParam = urlParams.get('category');
             if (catParam && categoryTitles[catParam]) {

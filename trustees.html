@@ -4,20 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laredo Firefighters Retirement System | Board of Trustees & Staff</title>
-    <meta name="description" content="Board of Trustees and Pension Administrator for the Laredo Firefighters Retirement System. Louis Vaillancourt, Alfredo Robledo, Jesus Esparza, Dr. Victor D. Trevino, and Jaime Jasso.">
+    <meta name="description" content="Board of Trustees and Pension Administrator for the Laredo Firefighters Retirement System. Governance, fiduciary oversight, and public contact information.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header h1 { font-size: 2.5rem; font-weight: 800; }
+        .section-title-clean { font-size: 1.875rem; font-weight: 800; }
+        .trustee-card-clean h4 { font-size: 1.25rem; font-weight: 800; }
+    </style>
 </head>
 <body>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-left">
+                <span class="badge-live">NOTICE</span>
+                <span class="top-bar-text">2025 Pre-Retirement Seminar Program Registration Open</span>
+                <a href="https://www.laredofire.com/LOFULF/LOFDCS/LAREDOFIREFIGHTERSPRERETIREMENTSEMINARPROGRAM2025.pdf" target="_blank" rel="noopener noreferrer" class="top-bar-link">Download Guide (PDF &bull; 1.2 MB) &rarr;</a>
+            </div>
+            <div class="top-bar-right">
+                <span class="top-bar-hours">Mon&ndash;Fri: 8:00 AM &ndash; 5:00 PM</span>
+                <a href="tel:956-717-8018" class="contact-pill" aria-label="Call System Office at 956-717-8018">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    956-717-8018
+                </a>
+            </div>
+        </div>
+    </div>
 
     <!-- Header Navigation -->
     <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="brand-logo">
-                <div class="logo-badge">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L3 9v11a2 2 0 0 1-2 2h14a2 2 0 0 1-2-2V9l-9-7z"/><path d="M12 7v7"/><path d="M9 11h6"/></svg>
+                <div class="logo-badge" title="Laredo Firefighters Emblem">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L14.2 6.5L16.8 2.2L16.2 7.8L21.8 7.2L17.5 9.8L22 12L17.5 14.2L21.8 16.8L16.2 16.2L16.8 21.8L14.2 17.5L12 22L9.8 17.5L7.2 21.8L7.8 16.2L2.2 16.8L6.5 14.2L2 12L6.5 9.8L2.2 7.2L7.8 7.8L7.2 2.2L9.8 6.5Z" fill="var(--primary)" stroke="var(--accent)"/>
+                        <circle cx="12" cy="12" r="4.5" fill="#0F172A" stroke="var(--accent)" stroke-width="1.5"/>
+                        <path d="M10.5 13.5L13.5 10.5" stroke="#FFFFFF" stroke-width="1.5"/>
+                        <path d="M10.5 10.5L13.5 13.5" stroke="#FFFFFF" stroke-width="1.5"/>
+                        <circle cx="12" cy="12" r="1" fill="var(--accent)"/>
+                    </svg>
                 </div>
                 <div class="brand-text">
                     <span class="brand-name">LAREDO FIREFIGHTERS</span>
@@ -43,14 +72,15 @@
             </button>
         </div>
     </header>
+
     <!-- Mobile Navigation Drawer -->
-    <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
         <div class="mobile-drawer-header">
             <div class="brand-text">
                 <span class="brand-name">LAREDO FIREFIGHTERS</span>
                 <span class="brand-sub">RETIREMENT SYSTEM</span>
             </div>
-            <button class="mobile-close" id="mobileClose">&times;</button>
+            <button class="mobile-close" id="mobileClose" aria-label="Close Navigation Menu">&times;</button>
         </div>
         <ul class="mobile-nav-list">
             <li><a href="index.html" class="mobile-nav-link">Home</a></li>
@@ -65,8 +95,8 @@
 
     <section class="page-header">
         <div class="container">
-            <h1>Board of Trustees & Staff</h1>
-            <p>The Laredo Firefighters Retirement System is governed by a four-member Board of Trustees and administered by the pension administrator.</p>
+            <h1>Board of Trustees & Leadership</h1>
+            <p>Governed by statutory fiduciary authority under the Texas Local Fire Fighters Retirement Act (TLFFRA, Tex. Rev. Civ. Stat. art. 6243e).</p>
         </div>
     </section>
 
@@ -74,52 +104,83 @@
     <main class="home-section">
         <div class="container">
             <h2 class="section-title-clean">Board of Trustees</h2>
-            <p class="section-desc-clean">Fiduciary trustees responsible for fund governance, investment policy oversight, and plan administration.</p>
+            <p class="section-desc-clean">Fiduciary trustees responsible for fund governance, investment policy oversight, actuarial stewardship, and plan administration.</p>
 
             <div class="trustee-grid-clean">
-                <div class="trustee-card-clean">
-                    <div class="avatar-clean">LV</div>
+                <div class="trustee-card-clean trustee-card-chair">
+                    <div class="avatar-clean avatar-gold">LV</div>
                     <h4>Louis Vaillancourt</h4>
-                    <span class="role-badge">Trustee</span>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Serves on the Board of Trustees for fund governance oversight.</p>
+                    <span class="role-badge role-badge-chair">Board Chairman / Firefighter Rep</span>
+                    <p style="color: var(--text-muted); margin-bottom: 12px;">Elected Firefighter Representative leading board governance, fund investments, and statutory plan administration.</p>
+                    <a href="contact.html?subject=board" class="trustee-contact-link">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Contact via Board Secretariat
+                    </a>
                 </div>
 
-                <div class="trustee-card-clean">
+                <div class="trustee-card-clean trustee-card-chair">
                     <div class="avatar-clean avatar-gold">AR</div>
                     <h4>Alfredo Robledo</h4>
-                    <span class="role-badge">Vice Chairman</span>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Vice Chairman of the Board of Trustees, leading board sessions.</p>
+                    <span class="role-badge role-badge-chair">Vice Chairman / Firefighter Rep</span>
+                    <p style="color: var(--text-muted); margin-bottom: 12px;">Elected Firefighter Representative & Vice Chairman of the Board, directing meeting agendas and policy implementation.</p>
+                    <a href="contact.html?subject=board" class="trustee-contact-link">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Contact via Board Secretariat
+                    </a>
                 </div>
 
-                <div class="trustee-card-clean">
+                <div class="trustee-card-clean trustee-card-fire">
                     <div class="avatar-clean">JE</div>
                     <h4>Jesus Esparza</h4>
-                    <span class="role-badge">Trustee</span>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Fiduciary trustee representing active and retired members.</p>
+                    <span class="role-badge role-badge-fire">Firefighter Representative</span>
+                    <p style="color: var(--text-muted); margin-bottom: 12px;">Elected Active Member Trustee representing firefighter interests, disability reviews, and beneficiary entitlements.</p>
+                    <a href="contact.html?subject=board" class="trustee-contact-link">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Contact via Board Secretariat
+                    </a>
                 </div>
 
-                <div class="trustee-card-clean">
+                <div class="trustee-card-clean trustee-card-city">
                     <div class="avatar-clean">VT</div>
                     <h4>Dr. Victor D. Trevino</h4>
-                    <span class="role-badge">Trustee</span>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Board trustee focused on system compliance and asset preservation.</p>
+                    <span class="role-badge role-badge-city">City & Public Representative</span>
+                    <p style="color: var(--text-muted); margin-bottom: 12px;">Appointed City Trustee focusing on municipal fiscal alignment, public disclosures, and fund asset protection.</p>
+                    <a href="contact.html?subject=board" class="trustee-contact-link">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Contact via Board Secretariat
+                    </a>
                 </div>
             </div>
 
+            <!-- Pension Administrator Section -->
             <div class="mt-5">
-                <h2 class="section-title-clean">Pension Administrator</h2>
-                <div class="staff-box-clean">
-                    <h4>Jaime Jasso</h4>
-                    <p style="color: var(--primary); font-family: var(--font-heading); font-weight: 700; font-size: 0.9rem;">Pension Administrator</p>
-                    <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 8px;">Manages daily office operations, member benefit applications, board meeting notices, beneficiary records, and plan inquiries.</p>
-                    <div class="staff-contact-list">
-                        <p>Phone: <a href="tel:956-717-8018">956-717-8018</a></p>
-                        <p>Fax: 956-717-8019</p>
-                        <p>Email: <a href="mailto:JAIME.JASSO@LAREDOFIRE.COM">JAIME.JASSO@LAREDOFIRE.COM</a></p>
-                        <p>Office: 5219 Tesoro Plaza Dr., Laredo, TX 78041</p>
+                <h2 class="section-title-clean">Pension Administration & System Operations</h2>
+                <div class="staff-box-clean" style="max-width: 100%; display: grid; grid-template-columns: 1fr 1.2fr; gap: 24px; align-items: center;">
+                    <div>
+                        <h4>Jaime Jasso</h4>
+                        <p style="color: var(--primary); font-family: var(--font-heading); font-weight: 700; font-size: 0.95rem;">Pension Administrator</p>
+                        <p style="color: var(--text-muted); margin-top: 8px; line-height: 1.5;">
+                            Directly handles member annuity calculations, benefit applications, public meeting postings under the Texas Open Meetings Act, board secretariat duties, and system operations.
+                        </p>
+                    </div>
+                    <div class="staff-contact-list" style="background: #F8FAFC; padding: 20px; border-radius: 10px; border: 1px solid var(--border);">
+                        <p style="margin-bottom: 6px;"><strong>Telephone:</strong> <a href="tel:956-717-8018">956-717-8018</a> (Direct Office Line)</p>
+                        <p style="margin-bottom: 6px;"><strong>Fax Line:</strong> 956-717-8019</p>
+                        <p style="margin-bottom: 6px;"><strong>Official Email:</strong> <a href="mailto:JAIME.JASSO@LAREDOFIRE.COM">JAIME.JASSO@LAREDOFIRE.COM</a></p>
+                        <p style="margin-bottom: 0;"><strong>Office Address:</strong> 5219 Tesoro Plaza Dr., Laredo, TX 78041</p>
                     </div>
                 </div>
             </div>
+
+            <!-- Governance & Meeting Notice Box -->
+            <div class="quick-card-clean mt-5" style="border-radius: 12px; background: #F8FAFC; border: 1px solid var(--border);">
+                <h3>Board Meetings & Public Participation</h3>
+                <p style="margin-bottom: 12px;">
+                    Regular meetings of the Board of Trustees are held monthly at the System Office (5219 Tesoro Plaza Dr., Laredo, TX 78041). Meeting notices and agendas are posted at least 72 hours in advance in full compliance with the Texas Open Meetings Act (TOMA).
+                </p>
+                <a href="documents.html?category=agendas" class="card-link-text">Browse Official Agendas & Meeting Minutes &rarr;</a>
+            </div>
+
         </div>
     </main>
 
@@ -149,7 +210,7 @@
             </div>
             <div class="footer-col">
                 <h5>Office Contact</h5>
-                <p style="font-size: 0.85rem;">5219 Tesoro Plaza Dr.<br>Laredo, TX 78041<br>Phone: 956-717-8018</p>
+                <p style="font-size: 0.85rem;">5219 Tesoro Plaza Dr.<br>Laredo, TX 78041<br>Phone: <a href="tel:956-717-8018" style="color: #94A3B8;">956-717-8018</a></p>
             </div>
         </div>
         <div class="footer-bottom-text">
